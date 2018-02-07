@@ -40,7 +40,6 @@
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="<?php echo site_url('assets/admin/'); ?>plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 
-  <link rel="stylesheet" type="text/css" href="<?php echo site_url('assets/admin/'); ?>js/admin/lightbox/dist/css/lightbox.min.css">
   
   <link rel="stylesheet" type="text/css" href="<?php echo site_url('assets/admin/'); ?>js/admin/colorbox/example1/colorbox.css">
   

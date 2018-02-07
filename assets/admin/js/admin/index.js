@@ -1,6 +1,9 @@
 $(document).ready(function(){
-    $('#title').change(function(){
-        $('#slug').val(to_slug($('#title').val()));
+    $('#title-en').change(function(){
+        $('#slug-en').val(to_slug($('#title-en').val()));
+    });
+    $('#title-hu').change(function(){
+        $('#slug-hu').val(to_slug($('#title-hu').val()));
     });
 });
 
