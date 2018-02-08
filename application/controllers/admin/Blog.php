@@ -56,6 +56,7 @@ class Blog extends Admin_Controller {
             $output[$key]['data'] = $this->blog_model->get_by_id($value['id']);
         }
         $this->data['blogs'] = $output;
+        // print_r($output);die;
 
         $this->render('admin/blog/list_blog_view');
     }
@@ -69,17 +70,21 @@ class Blog extends Admin_Controller {
         $this->load->helper('form');
         $this->load->library('form_validation');
 
-        $this->form_validation->set_rules('title', 'Blog name', 'trim|required');
+        $this->form_validation->set_rules('title_en', 'Blog name', 'trim|required');
+        $this->form_validation->set_rules('title_hu', 'Blog name', 'trim|required');
 
         if ($this->form_validation->run() == FALSE) {
             $this->render('admin/blog/create_blog_view');
         } else {
             if ($this->input->post()) {
                 $image = $this->upload_image('picture', $_FILES['picture']['name'], 'assets/upload/blog', 'assets/upload/blog/thumbs');
+                $slug_en = $this->input->post('slug-en');
+                $slug_hu = $this->input->post('slug-hu');
+                $unique_slug_en = $this->blog_model->build_unique_slug($slug_en, 'en');
+                $unique_slug_hu = $this->blog_model->build_unique_slug($slug_hu, 'hu');
                 $data = array(
                     'description_image' => $image,
                     // type == title (need to find out why dropdown cannot set name = type)
-                    'type' => $this->input->post('title'),
                     'created_at' => $this->author_info['created'],
                     'created_by' => $this->author_info['created_by'],
                     'updated_at' => $this->author_info['modified'],
@@ -88,22 +93,25 @@ class Blog extends Admin_Controller {
 
                 try {
                     $insert_id = $this->blog_model->insert($data);
-                    $data_vi = array(
-                        'blog_id' => $insert_id,
-                        'language' => 'vi',
-                        'title' => $this->input->post('title_vi'),
-                        'description' => $this->input->post('description_vi'),
-                        'content' => $this->input->post('content_vi'),
-                    );
+
                     $data_en = array(
                         'blog_id' => $insert_id,
                         'language' => 'en',
                         'title' => $this->input->post('title_en'),
+                        'slug' => $unique_slug_en,
                         'description' => $this->input->post('description_en'),
                         'content' => $this->input->post('content_en'),
                     );
+                    $data_hu = array(
+                        'blog_id' => $insert_id,
+                        'language' => 'hu',
+                        'title' => $this->input->post('title_hu'),
+                        'slug' => $unique_slug_hu,
+                        'description' => $this->input->post('description_hu'),
+                        'content' => $this->input->post('content_hu'),
+                    );
 
-                    $this->blog_model->insert_with_language($data_vi, $data_en);
+                    $this->blog_model->insert_with_language($data_en, $data_hu);
 
                     $this->session->set_flashdata('message', 'Blog added successfully');
                 } catch (Exception $e) {
@@ -119,7 +127,8 @@ class Blog extends Admin_Controller {
         $this->load->helper('form');
         $this->load->library('form_validation');
 
-        $this->form_validation->set_rules('title', 'Title', 'trim|required');
+        $this->form_validation->set_rules('title_en', 'Blog name', 'trim|required');
+        $this->form_validation->set_rules('title_hu', 'Blog name', 'trim|required');
 
         $input_id = isset($id) ? (int) $id : (int) $this->input->post('id');
         $result = $this->blog_model->get_by_id($input_id);
@@ -131,28 +140,36 @@ class Blog extends Admin_Controller {
         // Title
         $title = explode('|||', $result['blog_title']);
         $result['title_en'] = $title[0];
-        $result['title_vi'] = $title[1];
+        $result['title_hu'] = $title[1];
+
+        $slug = explode('|||', $result['blog_slug']);
+        $result['slug_en'] = $slug[0];
+        $result['slug_hu'] = $slug[1];
 
         // Description
         $description = explode('|||', $result['blog_description']);
         $result['description_en'] = isset($description[0]) ? $description[0] : '';
-        $result['description_vi'] = isset($description[1]) ? $description[1] : '';
+        $result['description_hu'] = isset($description[1]) ? $description[1] : '';
 
         // Content
         $content = explode('|||', $result['blog_content']);
         $result['content_en'] = isset($content[0]) ? $content[0] : '';
-        $result['content_vi'] = isset($content[1]) ? $content[1] : '';
+        $result['content_hu'] = isset($content[1]) ? $content[1] : '';
 
+        // print_r($result);die;
         if ($this->form_validation->run() == FALSE) {
             $this->data['blog'] = $result;
             $this->render('admin/blog/edit_blog_view');
         } else {
             if ($this->input->post()) {
                 $image = $this->upload_image('picture', $_FILES['picture']['name'], 'assets/upload/blog', 'assets/upload/blog/thumbs');
+                $slug_en = $this->input->post('slug-en');
+                $slug_hu = $this->input->post('slug-hu');
+                $unique_slug_en = $this->blog_model->build_unique_slug($slug_en, 'en');
+                $unique_slug_hu = $this->blog_model->build_unique_slug($slug_hu, 'hu');
                 $data = array(
                     'description_image' => $image,
                     // type == title (need to find out why dropdown cannot set name = type)
-                    'type' => $this->input->post('title'),
                     'created_at' => $this->author_info['created'],
                     'created_by' => $this->author_info['created_by'],
                     'updated_at' => $this->author_info['modified'],
@@ -164,23 +181,27 @@ class Blog extends Admin_Controller {
 
                 try {
                     $this->blog_model->update($input_id, $data);
-                    $data_vi = array(
-                        'blog_id' => $input_id,
-                        'language' => 'vi',
-                        'title' => $this->input->post('title_vi'),
-                        'description' => $this->input->post('description_vi'),
-                        'content' => $this->input->post('content_vi'),
-                    );
-                    $this->blog_model->update_with_language_vi($input_id, $data_vi);
+                    
 
                     $data_en = array(
                         'blog_id' => $input_id,
                         'language' => 'en',
                         'title' => $this->input->post('title_en'),
+                        'slug' => $unique_slug_en,
                         'description' => $this->input->post('description_en'),
                         'content' => $this->input->post('content_en'),
                     );
                     $this->blog_model->update_with_language_en($input_id, $data_en);
+
+                    $data_hu = array(
+                        'blog_id' => $input_id,
+                        'language' => 'hu',
+                        'title' => $this->input->post('title_hu'),
+                        'slug' => $unique_slug_hu,
+                        'description' => $this->input->post('description_hu'),
+                        'content' => $this->input->post('content_hu'),
+                    );
+                    $this->blog_model->update_with_language_hu($input_id, $data_hu);
 
                     $this->session->set_flashdata('message', 'Item added successfully');
                 } catch (Exception $e) {

@@ -159,7 +159,8 @@ class Blog_model extends CI_Model {
         $this->db->query('SET SESSION group_concat_max_len = 10000000');
         $this->db->select('blog.*, GROUP_CONCAT(blog_lang.title ORDER BY blog_lang.language separator \'|||\') as blog_title, 
                             GROUP_CONCAT(blog_lang.description ORDER BY blog_lang.language separator \'|||\') as blog_description,
-                            GROUP_CONCAT(blog_lang.content ORDER BY blog_lang.language separator \'|||\') as blog_content');
+                            GROUP_CONCAT(blog_lang.content ORDER BY blog_lang.language separator \'|||\') as blog_content,
+                            GROUP_CONCAT(blog_lang.slug ORDER BY blog_lang.language separator \'|||\') as blog_slug');
         $this->db->from('blog');
         $this->db->join('blog_lang', 'blog_lang.blog_id = blog.id', 'left');
         if($lang != ''){
@@ -183,8 +184,8 @@ class Blog_model extends CI_Model {
 //        return $this->db->insert('blog', $data);
     }
 
-    public function insert_with_language($data_vi, $data_en){
-        $data_merge = array($data_vi, $data_en);
+    public function insert_with_language($data_en, $data_hu){
+        $data_merge = array($data_en, $data_hu);
         return $this->db->insert_batch('blog_lang', $data_merge);
     }
 
@@ -194,10 +195,10 @@ class Blog_model extends CI_Model {
         return $this->db->update('blog', $data);
     }
 
-    public function update_with_language_vi($id, $data_vi){
+    public function update_with_language_hu($id, $data_hu){
         $this->db->where('blog_id', $id);
-        $this->db->where('language', 'vi');
-        return $this->db->update('blog_lang', $data_vi);
+        $this->db->where('language', 'hu');
+        return $this->db->update('blog_lang', $data_hu);
     }
 
     public function update_with_language_en($id, $data_en){
@@ -229,5 +230,22 @@ class Blog_model extends CI_Model {
         }
 
         return $this->db->trans_status();
+    }
+
+    public function build_unique_slug($slug, $lang, $id = null){
+        $count = 0;
+        $temp_slug = $slug;
+        while(true) {
+            $this->db->select('id');
+            $this->db->where('slug', $temp_slug);
+            $this->db->where('language', $lang);
+            if($id != null){
+                $this->db->where('id !=', $id);
+            }
+            $query = $this->db->get('blog_lang');
+            if ($query->num_rows() == 0) break;
+            $temp_slug = $slug . '-' . (++$count);
+        }
+        return $temp_slug;
     }
 }

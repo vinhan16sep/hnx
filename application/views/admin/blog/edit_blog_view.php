@@ -132,91 +132,104 @@
         margin-right: 0;
     }
 </style>
-<div class="container">
-    <?php
-    echo form_open_multipart('', array('class' => 'form-horizontal'));
-    ?>
-    <div class="row">
-        <div class="col-md-12">
-            <span class="checkout-step-number">1</span>
-            <h4 class="checkout-step-title"> Basic Info</h4>
-            <div class="form-group">
-                <?php
-                echo form_label('Loại tin / Type', 'title');
-                echo form_error('title');
-                echo form_dropdown('title', array('0' => 'Thông tin sức khoẻ', '1' => 'Thuốc và cách sử dụng'), set_value('title', $blog['type']), 'class="form-control"');
-                ?>
-            </div>
-            <div class="form-group picture">
-                 <img src="<?php echo base_url('assets/upload/blog/' . $item['description_image']); ?>" alt="">
-                <?php
-                echo form_label('Ảnh đại diện / Picture (600 x 470px)', 'picture');
-                echo form_error('picture');
-                echo form_upload('picture', set_value('picture'), 'class="form-control"');
-                ?>
-            </div>
-        </div>
-
-        <div class="col-md-6">
-            <span class="checkout-step-number">2</span>
-            <h4 class="checkout-step-title">Tiếng Việt</h4>
-            <div class="form-group">
-                <?php
-                echo form_label('Tiêu đề', 'title_vi');
-                echo form_error('title_vi');
-                echo form_input('title_vi', set_value('title_vi', $blog['title_vi']), 'class="form-control"');
-                ?>
-            </div>
-            <div class="form-group description">
-                <?php
-                echo form_label('Tóm tắt', 'description_vi');
-                echo form_error('description_vi');
-                echo form_textarea('description_vi', set_value('description_vi', $blog['description_vi']), 'class="form-control"');
-                ?>
-            </div>
-            <div class="form-group">
-                <?php
-                echo form_label('Nội dung', 'content_vi');
-                echo form_error('content_vi');
-                echo form_textarea('content_vi', set_value('content_vi', $blog['content_vi'], false), 'class="form-control blog-content"')
-                ?>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <span class="checkout-step-number">3</span>
-            <h4 class="checkout-step-title">English</h4>
-            <div class="form-group">
-                <?php
-                echo form_label('Tiêu đề', 'title_en');
-                echo form_error('title_en');
-                echo form_input('title_en', set_value('title_en', $blog['title_en']), 'class="form-control"');
-                ?>
-            </div>
-            <div class="form-group description">
-                <?php
-                echo form_label('Tóm tắt', 'description_en');
-                echo form_error('description_en');
-                echo form_textarea('description_en', set_value('description_en', $blog['description_en']), 'class="form-control"');
-                ?>
-            </div>
-            <div class="form-group">
-                <?php
-                echo form_label('Nội dung', 'content_en');
-                echo form_error('content_en');
-                echo form_textarea('content_en', set_value('content_vi', $blog['content_en'], false), 'class="form-control blog-content"')
-                ?>
-            </div>
-        </div>
-
-
-        <div class="form-group col-sm-12 text-right fix-bottom">
+<div class="content-wrapper" style="min-height: 916px;">
+    <section class="content row">
+        <div class="container col-md-12">
             <?php
-                echo form_submit('submit', 'OK', 'class="btn btn-primary"');
-                echo form_close();
-                ?>
-                <a class="btn btn-default btn-sm cancel" href="javascript:window.history.go(-1);">Back</a>
+            echo form_open_multipart('', array('class' => 'form-horizontal'));
+            ?>
+            <div class="row">
+                <div class="col-md-12">
+                    <span class="checkout-step-number">1</span>
+                    <h4 class="checkout-step-title"> Basic Info</h4>
+                    <div class="form-group picture">
+                         <img src="<?php echo base_url('assets/upload/blog/' . $blog['description_image']); ?>" alt="" width="150">
+                        <?php
+                        echo form_label('Ảnh đại diện / Picture (600 x 470px)', 'picture');
+                        echo form_error('picture');
+                        echo form_upload('picture', set_value('picture'), 'class="form-control"');
+                        ?>
+                    </div>
+                </div>
+
+                
+                <div class="col-md-6">
+                    <span class="checkout-step-number">2</span>
+                    <h4 class="checkout-step-title">English</h4>
+                    <div class="form-group">
+                        <?php
+                        echo form_label('Title', 'title_en');
+                        echo form_error('title_en');
+                        echo form_input('title_en', set_value('title_en', $blog['title_en']), 'class="form-control" id="title-en"');
+                        ?>
+                    </div>
+                    <div class="form-group">
+                        <?php
+                        echo form_label('Slug', 'slug-en');
+                        echo form_error('slug-en');
+                        echo form_input('slug-en', set_value('slug-en', $blog['slug_en']), 'class="form-control" id="slug-en" readonly');
+                        ?>
+                    </div>
+                    <div class="form-group description">
+                        <?php
+                        echo form_label('Description', 'description_en');
+                        echo form_error('description_en');
+                        echo form_textarea('description_en', set_value('description_en', $blog['description_en']), 'class="form-control"');
+                        ?>
+                    </div>
+                    <div class="form-group">
+                        <?php
+                        echo form_label('Content', 'content_en');
+                        echo form_error('content_en');
+                        echo form_textarea('content_en', set_value('content_en', $blog['content_en'], false), 'class="form-control blog-content"')
+                        ?>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <span class="checkout-step-number">3</span>
+                    <h4 class="checkout-step-title">Hungary</h4>
+                    <div class="form-group">
+                        <?php
+                        echo form_label('Cím', 'title_hu');
+                        echo form_error('title_hu');
+                        echo form_input('title_hu', set_value('title_hu', $blog['title_hu']), 'class="form-control" id="title-hu"');
+                        ?>
+                    </div>
+                    <div class="form-group">
+                        <?php
+                        echo form_label('Meztelen csiga', 'slug-hu');
+                        echo form_error('slug-hu');
+                        echo form_input('slug-hu', set_value('slug-hu', $blog['slug_hu']), 'class="form-control" id="slug-hu" readonly');
+                        ?>
+                    </div>
+                    <div class="form-group description">
+                        <?php
+                        echo form_label('Meztelen csiga', 'description_hu');
+                        echo form_error('description_hu');
+                        echo form_textarea('description_hu', set_value('description_hu', $blog['description_hu']), 'class="form-control"');
+                        ?>
+                    </div>
+                    <div class="form-group">
+                        <?php
+                        echo form_label('Tartalom', 'content_hu');
+                        echo form_error('content_hu');
+                        echo form_textarea('content_hu', set_value('content_hu', $blog['content_hu'], false), 'class="form-control blog-content"')
+                        ?>
+                    </div>
+                </div>
+
+
+                <div class="form-group col-sm-12 text-right fix-bottom">
+                    <?php
+                        echo form_submit('submit', 'OK', 'class="btn btn-primary"');
+                        echo form_close();
+                        ?>
+                        <a class="btn btn-default btn-sm cancel" href="javascript:window.history.go(-1);">Back</a>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 </div>
 <script type="text/javascript" src="<?php echo site_url('tinymce/tinymce.min.js'); ?>"></script>
 <script>
