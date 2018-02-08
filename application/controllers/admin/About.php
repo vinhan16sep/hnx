@@ -103,7 +103,6 @@ class About extends Admin_Controller{
 	}
 
 	public function edit($id){
-        $this->output->enable_profiler(TRUE);
 
 		$this->load->model('about_model');
 		$about = $this->about_model->get_by_id($id);

@@ -103,13 +103,14 @@ $('.btn-remove').click(function(e){
   e.preventDefault();
   var image_id = $(this).data('image');
   var client_id = $(this).data('id');
+  var slug = $(this).data('slug');
   var url = $(this).attr('href');
   if(confirm('Chắc chắn xóa?')){
     $(this).parents('tr').fadeOut();
     $.ajax({
         url: url,
         type: 'GET',
-        data: {id : client_id, image_id : image_id}
+        data: {id : client_id, image_id : image_id, slug:slug}
     })
   }
   
