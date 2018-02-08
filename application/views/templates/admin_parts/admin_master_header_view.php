@@ -96,7 +96,7 @@
 
   <script type="text/javascript" src="<?php echo site_url('tinymce/tinymce.min.js'); ?>"></script>
   <style>
-        @font-face{
+        /*@font-face{
             font-family: webFont_N;
             src: url("<?php echo site_url('assets/public/fonts/OpenSans-Regular.ttf'); ?>");
         }
@@ -107,7 +107,7 @@
 
         .skin-blue .sidebar-menu>li>.treeview-menu{
             overflow: hidden;
-        }
+        }*/
     </style>
     </head>
 
@@ -117,7 +117,7 @@
             if ($this->ion_auth->logged_in()) {
         ?>
             <!-- container section start -->
-            <section id="container" class="">
+            <!-- <section id="container" class=""> -->
 
 
                 <header class="main-header">
@@ -138,7 +138,7 @@
                             <ul class="nav navbar-nav">
                                 <li class="dropdown user user-menu">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                        <img src="<?php echo site_url('assets/admin/'); ?>dist/img/user2-160x160.jpg" class="user-image" alt="user image">
+                                        <img src="<?php echo site_url('assets/admin/') ?>dist/img/user2-160x160.jpg" class="user-image" alt="user image">
                                         <span class="hidden-xs"><?php echo (isset($user_email))? $user_email : '' ?></span>
                                     </a>
                                     <ul class="dropdown-menu">
@@ -146,22 +146,7 @@
                                       <li class="user-header">
                                         <img src="<?php echo site_url('assets/admin/'); ?>dist/img/user2-160x160.jpg" class="img-circle" alt="user image">
 
-                                            <p>Thời Gian Hiện Tại<small><?php echo date('d/m/Y') ?></small></p>
-                                      </li>
-                                      <!-- Menu Body -->
-                                      <li class="user-body">
-                                        <div class="row">
-                                          <div class="col-xs-4 text-center">
-                                            <a href="#">Followers</a>
-                                          </div>
-                                          <div class="col-xs-4 text-center">
-                                            <a href="#">Sales</a>
-                                          </div>
-                                          <div class="col-xs-4 text-center">
-                                            <a href="#">Friends</a>
-                                          </div>
-                                        </div>
-                                        <!-- /.row -->
+                                            <p>Time<small><?php echo date('d/m/Y') ?></small></p>
                                       </li>
                                       <!-- Menu Footer-->
                                       <li class="user-footer">

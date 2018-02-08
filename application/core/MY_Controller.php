@@ -148,6 +148,7 @@ class Admin_Controller extends MY_Controller {
             //redirect them to the login page
             redirect('admin/user/login', 'refresh');
         }
+        $this->data['user_email'] = $this->ion_auth->user()->row()->username;
         $this->data['page_title'] = 'Administrator area';
 
         // Set timezone

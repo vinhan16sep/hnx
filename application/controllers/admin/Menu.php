@@ -226,4 +226,27 @@ class Menu extends Admin_Controller{
         $data = array('image' => $image_json);
 		$this->menu_model->update($id, $data);
 	}
+
+    public function special(){
+        $id = $_GET['id'];
+        $isExists = false;
+        $where = array('status' => 1);
+        if($this->menu_model->update($id, $where) == true){
+            $isExists = true;
+        }
+        
+        $this->output->set_status_header(200)->set_output(json_encode(array('isExists' => $isExists)));
+    }
+
+    public function unspecialized()
+    {
+        $id = $_GET['id'];
+        $isExists = false;
+        $where = array('status' => 0);
+        if($this->menu_model->update($id, $where) == true){
+            $isExists = true;
+        }
+        
+        $this->output->set_status_header(200)->set_output(json_encode(array('isExists' => $isExists)));
+    }
 }
