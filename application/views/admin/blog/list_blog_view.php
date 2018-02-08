@@ -17,24 +17,21 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                <?php
-                echo form_open_multipart('', array('class' => 'form-horizontal'));
-                ?>
-                    <label>Tìm kiếm</label>
-                    <div class="input-group">
-                        <?php
-                        echo form_error('keywords');
-                        echo form_input('keywords', set_value('keywords'), 'class="form-control"');
-                        echo '<div class="input-group-btn">';
+                    <form action="<?php echo base_url('admin/blog/index/') ?>" class="form-horizontal col-md-12 col-sm-12 col-xs-12" method="get" style="margin-bottom: 30px;">
+                        <label>Tìm kiếm</label>
+                        <div class="input-group">
+                            <?php
+                            echo form_error('keywords');
+                            echo form_input('keywords', set_value('keywords', $keywords), 'class="form-control"');
+                            echo '<div class="input-group-btn">';
 
-                        echo '<button class="btn btn-primary" type="submit" name="search" value="search">Search!</button>';
-                        echo '<a class="btn btn-default" href="' . base_url('admin/blog/reset') . '" role="button">Reset tìm kiếm</a>';
-                        echo '</div>';
-                        ?>
-    
-                    </div>
+                            echo '<button class="btn btn-primary" type="submit" name="search" value="search">Search!</button>';
+                            echo '</div>';
+                            ?>
+
+                        </div>
+                    </form>
                 </div>
-                <?php echo form_close(); ?>
             </div>
             <?php echo form_open_multipart(); ?>
             <div class="row">

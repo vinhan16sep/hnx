@@ -30,6 +30,7 @@
                                 <td><b><a href="#">Name</a></b></td>
                                 <td><b><a href="#">Price</a></b></td>
                                 <td><b><a href="#">Type</a></b></td>
+                                <td><b><a href="#">Special</a></b></td>
                                 <td><b>Operations</b></td>
                             </tr>
                             <?php foreach ($menu as $key => $value): ?>
@@ -38,6 +39,11 @@
                                     <td><?php echo $value['data']['menu_name'] ?></td>
                                     <td><?php echo $value['data']['price'] ?> $</td>
                                     <td><?php echo  ($value['data']['type'] == 0)? 'Food' : 'Drink' ?></td>
+                                    <?php if ($value['data']['status'] == 1): ?>
+                                        <td><button class="btn btn-success btn-is-active" data-id="<?php echo $value['id'] ?>"  title="Unspecialized"><i class="fa fa-check" aria-hidden="true"></i></button></td>
+                                    <?php else: ?>
+                                        <td><button class="btn btn-danger btn-not-active" data-id="<?php echo $value['id'] ?>"  title="Special"><i class="fa fa-times" aria-hidden="true"></i></button></td>
+                                    <?php endif ?>
                                     <td>
                                         <a href="<?php echo base_url('admin/menu/edit/'.$value['id']) ?>" title="Edit" class="btn-edit" data-id="<?php echo $value['id'] ?>" >
                                             <i class="fa fa-edit" aria-hidden="true"></i>
@@ -65,3 +71,58 @@
         </div>
     </section>
 </div>
+<script type="text/javascript">
+    /**
+ *
+ * not active banner
+ *
+ */
+var base_url = location.protocol + "//" + location.host + (location.port ? ':' + location.port : '');
+$('.btn-not-active').click(function(){
+    var btn_check = $(this);
+    var id = $(this).attr('data-id');
+    if(confirm('Active special?')){
+        jQuery.ajax({
+            method: "get",
+            url: base_url + '/hnx/admin/menu/special',
+            // url: location.protocol + "//" + location.host + (location.port ? ':' + location.port : '') + "/tuoithantien/comment/create_comment",
+            data: {id : id},
+            success: function(result){
+                if(JSON.parse(result).isExists == false){
+                    alert('false');
+                }else{
+                    window.location.reload();
+                }
+            }
+        });
+    };
+});
+/* end not active banner */
+
+/**
+ *
+ * active banner
+ *
+ */
+$('.btn-is-active').click(function(){
+    var btn_check = $(this);
+    var id = $(this).attr('data-id');
+    if(confirm('Unspecialized?')){
+        jQuery.ajax({
+            method: "get",
+            url: base_url + '/hnx/admin/menu/unspecialized',
+            // url: location.protocol + "//" + location.host + (location.port ? ':' + location.port : '') + "/tuoithantien/comment/create_comment",
+            data: {id : id},
+            success: function(result){
+                if(JSON.parse(result).isExists == false){
+                    alert('false');
+                }else{
+                    window.location.reload();
+                }
+            }
+        });
+    };
+    
+})
+/* end active banner */
+</script>

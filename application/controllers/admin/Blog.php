@@ -22,9 +22,11 @@ class Blog extends Admin_Controller {
             }
         }
         $keywords = '';
-        if($this->input->post('search')){
-            $keywords = $this->input->post('keywords');
+        if($this->input->get('search')){
+            $keywords = $this->input->get('keywords');
+            
         }
+        $this->data['keywords'] = $keywords;
         $this->load->helper('form');
         $this->load->library('pagination');
         $base_url = base_url() . 'admin/blog/index';
