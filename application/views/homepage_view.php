@@ -63,36 +63,39 @@
             <div class="column col-md-8 col-sm-8 col-xs-12">
                 <div class="gallery-block">
                     <div class="inner-box">
-                        <div class="image"> <img src="<?php echo site_url('assets/public/img/gallery/1.jpg')?>" alt="" />
+                        <div class="image">
+                        	<?php if ($menu_last['image']): ?>
+                        		<img src="<?php echo site_url('assets/upload/menu/'.$menu_last['slug'].'/'.$menu_last['image'])?>" alt="" />
+                        	<?php else: ?>
+                        		<img src="<?php echo site_url('assets/public/img/gallery/1.jpg') ?>" alt="" />
+                        	<?php endif ?>
                             <a href="./shop-single.html" class="overlay-layer"></a>
                             <div class="content">
-                                <div class="text"><a href="./shop-single.html">CROMESQUIS</a></div>
+                                <div class="text"><a href="./shop-single.html"><?php echo $menu_last['name'] ?></a></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="column col-md-4 col-sm-4 col-xs-12">
-                <div class="gallery-block">
-                    <div class="inner-box">
-                        <div class="image"> <img src="<?php echo site_url('assets/public/img/gallery/2.jpg')?>" alt="" />
-                            <a href="./shop-single.html" class="overlay-layer"></a>
-                            <div class="content">
-                                <div class="text"><a href="./shop-single.html">CHAMPIGNONS À L'AIL</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-block">
-                    <div class="inner-box">
-                        <div class="image"> <img src="<?php echo site_url('assets/public/img/gallery/3.jpg')?>" alt="" />
-                            <a href="./shop-single.html" class="overlay-layer"></a>
-                            <div class="content">
-                                <div class="text"><a href="./shop-single.html">MERGUEZ</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            	<?php foreach ($menu_image_icon as $key => $value): ?>
+	                <div class="gallery-block">
+	                    <div class="inner-box">
+	                        <div class="image">
+	                        	<?php if ($value['image']): ?>
+	                        		<img src="<?php echo site_url('assets/upload/menu/'.$value['slug'].'/'.$value['image'])?>" alt="" />
+	                        	<?php else: ?>
+                        			<img src="<?php echo site_url('assets/public/img/gallery/1.jpg') ?>" alt="" />
+	                        	<?php endif ?>
+	                        	
+	                            <a href="./shop-single.html" class="overlay-layer"></a>
+	                            <div class="content">
+	                                <div class="text"><a href="./shop-single.html"><?php echo $value['name'] ?></a></div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+                <?php endforeach ?>
             </div>
         </div>
     </div>
@@ -104,114 +107,20 @@
             <div class="title">Always Delicious</div>
             <h2>Main Menu</h2> </div>
         <div class="row clearfix">
-            <div class="menu-block col-md-4 col-sm-6 col-xs-12">
-                <div class="inner-box">
-                    <div class="info clearfix">
-                        <div class="pull-left">
-                            <h3><a href="./shop-single.html">Pastries</a></h3> </div>
-                        <div class="pull-right">
-                            <div class="price">$25</div>
-                        </div>
-                    </div>
-                    <div class="text">served warm and with walnut praline, crème fraiche </div>
-                </div>
-            </div>
-            <div class="menu-block col-md-4 col-sm-6 col-xs-12">
-                <div class="inner-box">
-                    <div class="info clearfix">
-                        <div class="pull-left">
-                            <h3><a href="./shop-single.html">Soupe Au Pistou</a></h3> </div>
-                        <div class="pull-right">
-                            <div class="price">$35</div>
-                        </div>
-                    </div>
-                    <div class="text">served warm and with walnut praline, crème fraiche </div>
-                </div>
-            </div>
-            <div class="menu-block col-md-4 col-sm-6 col-xs-12">
-                <div class="inner-box">
-                    <div class="info clearfix">
-                        <div class="pull-left">
-                            <h3><a href="./shop-single.html">Bouillabaisse</a></h3> </div>
-                        <div class="pull-right">
-                            <div class="price">$45</div>
-                        </div>
-                    </div>
-                    <div class="text">served warm and with walnut praline, crème fraiche </div>
-                </div>
-            </div>
-            <div class="menu-block col-md-4 col-sm-6 col-xs-12">
-                <div class="inner-box">
-                    <div class="info clearfix">
-                        <div class="pull-left">
-                            <h3><a href="./shop-single.html">French Toast Croissant</a></h3> </div>
-                        <div class="pull-right">
-                            <div class="price">$19</div>
-                        </div>
-                    </div>
-                    <div class="text">served warm and with walnut praline, crème fraiche </div>
-                </div>
-            </div>
-            <div class="menu-block col-md-4 col-sm-6 col-xs-12">
-                <div class="inner-box">
-                    <div class="info clearfix">
-                        <div class="pull-left">
-                            <h3><a href="./shop-single.html">Poulet Baguette</a></h3> </div>
-                        <div class="pull-right">
-                            <div class="price">$60</div>
-                        </div>
-                    </div>
-                    <div class="text">served warm and with walnut praline, crème fraiche </div>
-                </div>
-            </div>
-            <div class="menu-block col-md-4 col-sm-6 col-xs-12">
-                <div class="inner-box">
-                    <div class="info clearfix">
-                        <div class="pull-left">
-                            <h3><a href="./shop-single.html">Confit De Canard</a></h3> </div>
-                        <div class="pull-right">
-                            <div class="price">$50</div>
-                        </div>
-                    </div>
-                    <div class="text">served warm and with walnut praline, crème fraiche </div>
-                </div>
-            </div>
-            <div class="menu-block col-md-4 col-sm-6 col-xs-12">
-                <div class="inner-box">
-                    <div class="info clearfix">
-                        <div class="pull-left">
-                            <h3><a href="./shop-single.html">Rouge Vegetarian</a></h3> </div>
-                        <div class="pull-right">
-                            <div class="price">$45</div>
-                        </div>
-                    </div>
-                    <div class="text">served warm and with walnut praline, crème fraiche </div>
-                </div>
-            </div>
-            <div class="menu-block col-md-4 col-sm-6 col-xs-12">
-                <div class="inner-box">
-                    <div class="info clearfix">
-                        <div class="pull-left">
-                            <h3><a href="./shop-single.html">Risotto Vert</a></h3> </div>
-                        <div class="pull-right">
-                            <div class="price">$55</div>
-                        </div>
-                    </div>
-                    <div class="text">served warm and with walnut praline, crème fraiche </div>
-                </div>
-            </div>
-            <div class="menu-block col-md-4 col-sm-6 col-xs-12">
-                <div class="inner-box">
-                    <div class="info clearfix">
-                        <div class="pull-left">
-                            <h3><a href="./shop-single.html">Cromesouis</a></h3> </div>
-                        <div class="pull-right">
-                            <div class="price">$40</div>
-                        </div>
-                    </div>
-                    <div class="text">served warm and with walnut praline, crème fraiche </div>
-                </div>
-            </div>
+        	<?php foreach ($main_menu as $key => $value): ?>
+	            <div class="menu-block col-md-4 col-sm-6 col-xs-12">
+	                <div class="inner-box">
+	                    <div class="info clearfix">
+	                        <div class="pull-left">
+	                            <h3><a href="./shop-single.html"><?php echo $value['name'] ?></a></h3> </div>
+	                        <div class="pull-right">
+	                            <div class="price"><?php echo $value['price'] ?></div>
+	                        </div>
+	                    </div>
+	                    <div class="text"><?php echo $value['description'] ?></div>
+	                </div>
+	            </div>
+	        <?php endforeach ?>
         </div>
     </div>
 </section>

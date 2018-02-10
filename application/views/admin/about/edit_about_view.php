@@ -71,7 +71,7 @@
                         <?php
                         echo form_label('Image', 'image');
                         echo form_error('image');
-                        echo form_upload('image','','multiple');
+                        echo form_upload('image','','');
                         ?>
                     </div>
 

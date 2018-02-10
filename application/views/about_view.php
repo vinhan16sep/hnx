@@ -70,42 +70,22 @@
             <div class="title">Magical Experience</div>
             <h2>The Team</h2> </div>
         <div class="row clearfix">
-            <div class="team-block col-md-4 col-sm-6 col-xs-12">
-                <div class="inner-box">
-                    <div class="image">
-                        <a href="./chef.html"><img src="<?php echo site_url('assets/public/img/resource/team-1.jpg')?>" alt="" /></a>
-                    </div>
-                    <div class="lower-content">
-                        <h3><a href="./chef.html">Thomas Anderson</a></h3>
-                        <div class="designation">Executif Chef</div>
-                        <div class="text">"Every day brings more pleasure and sense of marvel. When New York city waking up and going to sleep is simply magical."</div>
-                    </div>
-                </div>
-            </div>
-            <div class="team-block col-md-4 col-sm-6 col-xs-12">
-                <div class="inner-box">
-                    <div class="image">
-                        <a href="./chef.html"><img src="<?php echo site_url('assets/public/img/resource/team-2.jpg')?>" alt="" /></a>
-                    </div>
-                    <div class="lower-content">
-                        <h3><a href="./chef.html">Roberto Contador</a></h3>
-                        <div class="designation">Chef</div>
-                        <div class="text">"Every day brings more pleasure and sense of marvel. When New York city waking up and going to sleep is simply magical."</div>
+            <?php if ($abouts): ?>
+            <?php foreach ($abouts as $key => $value): ?>
+                <div class="team-block col-md-4 col-sm-6 col-xs-12">
+                    <div class="inner-box">
+                        <div class="image">
+                            <a href="#"><img src="<?php echo site_url('assets/upload/about/'.$value['image'])?>" alt="" /></a>
+                        </div>
+                        <div class="lower-content">
+                            <h3><a href=""><?php echo $value['name'] ?></a></h3>
+                            <div class="designation"><?php echo $value['position'] ?></div>
+                            <div class="text">"<?php echo $value['description'] ?>"</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="team-block col-md-4 col-sm-6 col-xs-12">
-                <div class="inner-box">
-                    <div class="image">
-                        <a href="./chef.html"><img src="<?php echo site_url('assets/public/img/resource/team-3.jpg')?>" alt="" /></a>
-                    </div>
-                    <div class="lower-content">
-                        <h3><a href="./chef.html">Antuan Buchon</a></h3>
-                        <div class="designation">Pastry Chef</div>
-                        <div class="text">"Every day brings more pleasure and sense of marvel. When New York city waking up and going to sleep is simply magical."</div>
-                    </div>
-                </div>
-            </div>
+            <?php endforeach ?>
+            <?php endif ?>
         </div>
     </div>
 </section>

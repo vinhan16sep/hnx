@@ -6,9 +6,11 @@
 * 
 */
 $lang['detector'] = 'en';
-$lang['homepage'] = 'Homepage';
+$lang['homepage'] = 'Home';
 // Header - Menu
 $lang['about_us'] = 'About us';
+$lang['reservation'] = 'Reservation';
+$lang['menu'] = 'Menu';
 $lang['product'] = 'Products';
 $lang['blog'] = 'News - Events';
 $lang['recruit'] = 'Job opportunities';

@@ -81,9 +81,9 @@ class Blog extends Admin_Controller {
             if ($this->input->post()) {
                 $image = $this->upload_image('picture', $_FILES['picture']['name'], 'assets/upload/blog', 'assets/upload/blog/thumbs');
                 $slug_en = $this->input->post('slug-en');
-                $slug_hu = $this->input->post('slug-hu');
+                // $slug_hu = $this->input->post('slug-hu');
                 $unique_slug_en = $this->blog_model->build_unique_slug($slug_en, 'en');
-                $unique_slug_hu = $this->blog_model->build_unique_slug($slug_hu, 'hu');
+                // $unique_slug_hu = $this->blog_model->build_unique_slug($slug_hu, 'hu');
                 $data = array(
                     'description_image' => $image,
                     // type == title (need to find out why dropdown cannot set name = type)
@@ -108,7 +108,7 @@ class Blog extends Admin_Controller {
                         'blog_id' => $insert_id,
                         'language' => 'hu',
                         'title' => $this->input->post('title_hu'),
-                        'slug' => $unique_slug_hu,
+                        'slug' => $unique_slug_en,
                         'description' => $this->input->post('description_hu'),
                         'content' => $this->input->post('content_hu'),
                     );
@@ -199,7 +199,7 @@ class Blog extends Admin_Controller {
                         'blog_id' => $input_id,
                         'language' => 'hu',
                         'title' => $this->input->post('title_hu'),
-                        'slug' => $unique_slug_hu,
+                        'slug' => $unique_slug_en,
                         'description' => $this->input->post('description_hu'),
                         'content' => $this->input->post('content_hu'),
                     );

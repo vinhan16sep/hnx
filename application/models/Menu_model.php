@@ -149,4 +149,42 @@ class Menu_model extends CI_Model{
         }
         return $temp_slug;
     }
+
+    /**
+     *
+     * model for frontend
+     *
+     */
+    
+    public function get_latest_article($lang, $status = null, $limit = null, $start = null, $type = null){
+        $this->db->select('*');
+        $this->db->from('menu');
+        $this->db->join('menu_lang', 'menu_lang.menu_id = menu.id', 'left');
+        $this->db->where('menu_lang.language', $lang);
+        if($status != null){
+            $this->db->where('status', $status);
+        }
+        if($type != null){
+            $this->db->where('type', $type);
+        }
+        $this->db->where('menu.is_deleted', 0);
+        $this->db->limit($limit, $start);
+        $this->db->order_by("menu.id", "desc");
+
+        return $result = $this->db->get()->result_array();
+    }
+
+    public function get_row_latest_article($lang, $status){
+        $this->db->select('*');
+        $this->db->from('menu');
+        $this->db->join('menu_lang', 'menu_lang.menu_id = menu.id', 'left');
+        $this->db->where('menu_lang.language', $lang);
+        $this->db->where('status', $status);
+        $this->db->where('menu.is_deleted', 0);
+        $this->db->limit(1);
+        $this->db->order_by("menu.id", "desc");
+
+        return $result = $this->db->get()->row_array();
+    }
+    
 }
