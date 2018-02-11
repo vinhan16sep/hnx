@@ -72,9 +72,9 @@
                                         <li>
                                             <a href="<?php echo base_url('about') ?>"><?php echo $this->lang->line('about_us') ?></a>
                                         </li>
-                                        <li>
+                                        <!-- <li>
                                             <a href="<?php echo base_url('reservation') ?>"><?php echo $this->lang->line('reservation') ?></a>
-                                        </li>
+                                        </li> -->
                                         <li>
                                             <a href="<?php echo base_url('menu') ?>"><?php echo $this->lang->line('menu') ?></a>
                                         </li>
@@ -158,13 +158,13 @@
                                 <li>
                                     <a href="<?php echo base_url('about') ?>"><?php echo $this->lang->line('about_us') ?></a>
                                 </li>
-                                <li>
+                                <!-- <li>
                                     <a href="<?php echo base_url('reservation') ?>"><?php echo $this->lang->line('reservation') ?></a>
                                     <ul>
                                         <li><a href="./reservation.html">Reservation</a></li>
                                         <li><a href="./reservation-standard.html">Reservation Standard</a></li>
                                     </ul>
-                                </li>
+                                </li> -->
                                 <li>
                                     <a href="<?php echo base_url('menu') ?>"><?php echo $this->lang->line('menu') ?></a>
                                 </li>

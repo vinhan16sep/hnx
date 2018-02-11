@@ -1,14 +1,14 @@
 
 <section class="page-title" style="background-image:url(<?php echo site_url('assets/public/img/background/menu.jpg')?>);">
     <div class="auto-container">
-        <div class="title">Discover Our</div>
-        <h2>Menu</h2> </div>
+        <div class="title"><?php echo $this->lang->line('discover_our') ?></div>
+        <h2><?php echo $this->lang->line('menu') ?></h2> </div>
 </section>
 <section class="menu-section">
     <div class="auto-container">
         <div class="sec-title centered">
-            <div class="title">Always Delicious</div>
-            <h2>Main Menu</h2> </div>
+            <div class="title"><?php echo $this->lang->line('always_delicious') ?></div>
+            <h2><?php echo $this->lang->line('main_menu') ?></h2> </div>
         <div class="row clearfix">
             <?php if ($main_menu): ?>
             <?php foreach ($main_menu as $key => $value): ?>
@@ -32,8 +32,8 @@
 <section class="menu-section style-two" style="background-image:url(<?php echo site_url('assets/public/img/background/8.jpg')?>);">
     <div class="auto-container">
         <div class="sec-title light centered">
-            <div class="title">Exceptional</div>
-            <h2>Cocktail Card</h2> </div>
+            <div class="title"><?php echo $this->lang->line('exceptional') ?></div>
+            <h2><?php echo $this->lang->line('cocktail_card') ?></h2> </div>
         <div class="row clearfix">
             <?php if ($cocktail_card): ?>
             <?php foreach ($cocktail_card as $key => $value): ?>
@@ -57,8 +57,8 @@
 <section class="special-section">
     <div class="auto-container">
         <div class="sec-title centered">
-            <div class="title">Chefs Selection</div>
-            <h2>Today’s Special</h2> </div>
+            <div class="title"><?php echo $this->lang->line('chefs_selection') ?></div>
+            <h2><?php echo $this->lang->line('today’s_special') ?></h2> </div>
         <div class="row clearfix">
             <?php if ($special): ?>
             <?php foreach ($special as $key => $value): ?>

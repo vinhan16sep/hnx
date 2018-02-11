@@ -41,18 +41,20 @@
 
 <section class="page-title" style="background-image:url(<?php echo site_url('assets/public/img/background/homepage.jpg')?>);">
     <div class="auto-container">
-        <div class="title">Discover Our</div>
+        <div class="title"><?php echo $this->lang->line('discover_our') ?></div>
         <h2>Hanoi Xua</h2>
-        <div class="title">Restaurant</div>
+        <div class="title"><?php echo $this->lang->line('restaurant') ?></div>
     </div>
 </section>
 
 <section class="title-section">
     <div class="auto-container">
         <div class="sec-title centered">
-            <h2>Unique Story <br />Since 1989</h2> </div>
+            <h2><?php echo $this->lang->line('unique_story') ?> <br /><?php echo $this->lang->line('since') ?> 1989</h2> </div>
         <div class="content">
-            <div class="text"> Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis nibhid elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsa ipsum velit. Namec tellus adio tincidunt auctor a ornare odioed nauris vitae era.</div>
+            <div class="text">
+                <?php echo $this->lang->line('alen_remsi') ?>
+            </div>
             <div class="signature">Alen Remsi</div>
         </div>
     </div>
@@ -104,8 +106,8 @@
 <section class="menu-section">
     <div class="auto-container">
         <div class="sec-title centered">
-            <div class="title">Always Delicious</div>
-            <h2>Main Menu</h2> </div>
+            <div class="title"><?php echo $this->lang->line('always_delicious') ?></div>
+            <h2><?php echo $this->lang->line('main_menu') ?></h2> </div>
         <div class="row clearfix">
         	<?php foreach ($main_menu as $key => $value): ?>
 	            <div class="menu-block col-md-4 col-sm-6 col-xs-12">
@@ -127,13 +129,13 @@
 
 <section class="call-to-action" style="background-image:url('<?php echo site_url('assets/public/img/background/2.jpg')?>');">
     <div class="auto-container">
-        <h2>Enjoy Together</h2>
+        <h2><?php echo $this->lang->line('enjoy_together') ?></h2>
     </div>
 </section>
 
 <section class="reservation-section">
     <div class="auto-container">
-        <div class="sec-title centered">
+        <!-- <div class="sec-title centered">
             <div class="title">Magical Experience</div>
             <h2>Reservation</h2> </div>
         <div class="reserve-form">
@@ -180,7 +182,7 @@
                 </div>
             </div>
             </form>
-        </div>
+        </div> -->
     </div>
 </section>
 
@@ -213,13 +215,13 @@
     <div class="auto-container">
         <div class="row clearfix">
             <div class="info-column col-md-4 col-sm-12 col-xs-12">
-                <h2>Useful information</h2>
-                <h3>Location</h3>
+                <h2><?php echo $this->lang->line('useful_information') ?></h2>
+                <h3><?php echo $this->lang->line('location') ?></h3>
                 <div class="text">Monde Restaurant
                     <br />55 Angelica Street
                     <br />10003 New York
                     <br />USA</div>
-                <h3>Dress Code</h3>
+                <h3><?php echo $this->lang->line('dress_code') ?></h3>
                 <div class="text">Appropriate dress code required
                     <br />T shirts, shorts and sports clothes will be refused</div>
             </div>

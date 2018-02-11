@@ -38,6 +38,7 @@ $lang['blog_latest_articles'] = 'Latest articles';
 $lang['blog_most_viewed'] = 'Most viewed';
 
 // Footer
+$lang['hours'] = 'ÓRÁK';
 $lang['company'] = 'Company';
 $lang['history'] = 'History';
 $lang['duty'] = 'Views and duties';
@@ -101,3 +102,47 @@ $lang['history_title'] = 'History';
 
 // Search
 $lang['searchResult'] = 'Search results';
+
+/* Homepage */
+$lang['discover_our'] = 'MEGBESZTÜL';
+$lang['restaurant'] = 'ÉTTEREM';
+$lang['unique_story'] = 'Egyedi történet';
+$lang['since'] = 'Mivel';
+$lang['alen_remsi'] = 'Az aeneai lerajzolódás, a lorem quis bibendum auctor, a nisi elit consequat ipsum, a nec sagittis nibhid elit. Duis sed odio sit amet nibh vulpedat kurzus egy ülést amet mauris. Morbi accumsa ipsum velit. Namec tellus adio tincidunt auctor egy ornare hódolt nauris vitae korszak.';
+$lang['always_delicious'] = 'Mindig finom';
+$lang['main_menu'] = 'Főmenü';
+$lang['enjoy_together'] = 'egyében javítani';
+$lang['useful_information'] = 'HASZNOS INFORMÁCIÓ';
+$lang['location'] = 'Elhelyezkedés';
+$lang['dress_code'] = 'Kötelező viselet';
+
+/* About */
+$lang['welcome'] = 'Üdvözöljük';
+$lang['story'] = 'SZTORI';
+$lang['get_the_best'] = 'A LEGJOBB';
+$lang['get_the_best_text'] = 'Aéanian sollicitudin, lorem quis bibendum auctorisi elit következtében ipsum sagittis remibaid elit. Duis sed odio sit amet nibh vulpedat kurzus egy ülést amet mauris. Morbi accumsan ipsum velit. Nam nekc tellus a odio tincidunt auctor egy ornare odio. Sedon mauris vitae erat következtében auctor eu elit lass aptent taciti sociosqu.';
+$lang['find_a_table'] = 'Keressen egy táblát';
+$lang['unique'] = 'egyedi';
+$lang['unique_text'] = 'Aéanian sollicitudin, lorem quis bibendum aucsim elit consuat ipsum, nec sagittis nibhid elit. Duis sed odio sit amet nibh vulped ate sus a sit amet mauris. Morbi accumsa ipsum velit. Namec lus adio tincid ant auctor egy ornare elszomorított nauris vitae korszak.';
+$lang['facts'] = 'tények';
+$lang['the_place'] = 'a hely';
+$lang['the_place_text'] = 'Egyedülálló élmény a Monde ünnepén. Proina nibhel velit auctor aliquet. Az aenei szolíciális udine oremai biben dum auctor, nem elit következménye, sem a nibhad elit. Duis sed odio sit amet nibvupusus amet uris. Morbi felhalmozódott a vitaminokról, amelyek a tündöklődést és az örömöt mutatják.';
+$lang['magical_experience'] = 'mágikus élmény';
+$lang['the_team'] = 'a csapat';
+
+/* Menu */
+$lang['exceptional'] = 'kivételes';
+$lang['cocktail_card'] = 'koktél kártya';
+$lang['chefs_selection'] = 'szakács kiválasztása';
+$lang['today’s_special'] = 'a mai különleges';
+
+/* blog */
+$lang['read_our'] = 'olvassa el';
+
+/* contact */
+$lang['get_in_touch'] = 'felveszi a kapcsolatot';
+$lang['email_address'] = 'Email Cím';
+$lang['name'] = 'Név';
+$lang['your_message'] = 'Az üzeneted';
+$lang['telephone_reservation'] = 'Telefonos foglalás';
+$lang['please_call'] = 'Kérlek hívj';
