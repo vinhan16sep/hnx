@@ -5,14 +5,16 @@
 * Format: $lang['key_name'] => 'key_name_in_english'
 * 
 */
-$lang['detector'] = 'en';
+$lang['detector'] = 'hu';
 $lang['homepage'] = 'Kezdőlap';
 // Header - Menu
 $lang['about_us'] = 'About us';
+$lang['reservation'] = 'Foglalás';
+$lang['menu'] = 'menü';
 $lang['product'] = 'Products';
-$lang['blog'] = 'News - Events';
+$lang['blog'] = 'Hírek - Események';
 $lang['recruit'] = 'Job opportunities';
-$lang['contact'] = 'Contact';
+$lang['contact'] = 'Kapcsolatba lépni';
 $lang['search'] = 'Search';
 $lang['readmore'] = 'Read more';
 $lang['sub_1'] = 'History';

@@ -1,42 +1,45 @@
 <section class="cover">
-    <img src="<?php echo base_url('assets/upload/cover/' . $cover['image']); ?>">
+    <!-- <img src="<?php echo base_url('assets/upload/cover/' . $cover['image']); ?>"> -->
 </section>
-
-<section class="content news container">
-    <div class="content_title page_list">
+<section class="page-title" style="background-image:url(<?php echo site_url('assets/public/img/background/about.jpg')?>);">
+    <div class="auto-container">
+        <div class="title">Read our</div>
+        <h2>Blog</h2> </div>
+</section>
+<section class="blog-page-section">
+    <!-- <div class="content_title page_list">
         <ul>
             <li><a href="<?php echo site_url('blog/list_information'); ?>"><?php echo $this->lang->line('blog_information'); ?></a></li>
             <li><a href="<?php echo site_url('blog/list_medicine'); ?>"><?php echo $this->lang->line('blog_medicine'); ?></a></li>
         </ul>
         <div class="line"></div>
-    </div>
-
-    <div class="news_post col-lg-9 col-xs-12">
-        <div class="news_list col-lg-12">
-            <?php if($blog): ?>
-                <?php foreach($blog as $key => $item): ?>
-                <div class="item col-lg-6">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <img src="<?php echo empty($item['description_image']) ? base_url('assets/public/img/no-intro-image.jpg') : base_url('assets/upload/blog/' . $item['description_image']); ?>">
+    </div> -->
+<div class="auto-container">
+    <div class="row clearfix">
+        <?php if($blog): ?>
+            <?php foreach($blog as $key => $item): ?>
+                <div class="news-block col-md-4 col-sm-6 col-xs-12">
+                    <div class="inner-box">
+                        <div class="image">
+                            <a href="<?php echo base_url('blog/detail/' . $item['slug']); ?>"><img src="<?php echo empty($item['description_image']) ? base_url('assets/public/img/background/news-1.jpg') : base_url('assets/upload/blog/' . $item['description_image']); ?>" alt=""></a>
                         </div>
-                        <div class="col-lg-12">
-                            <h3 class="post_title"><a class="brand_color" href="<?php echo base_url('blog/detail/' . $item['type'] . '/' . $item['blog_id']); ?>"><?php echo $item['title']; ?></a></h3>
-                            <p class="post_date">
-                                <i class="fa fa-calendar-o"></i>
-                                <?php echo $item['created_at']; ?>
-                            </p>
-                        </div>
+                        <div class="lower-box">
+                            <h3><a href="<?php echo base_url('blog/detail/' . $item['slug']); ?>"><?php echo $item['title']; ?></a></h3>
+                            <div class="post-date"><?php echo $item['created_at']; ?></div>
+                            <div class="text">
+                                <?php echo $item['description']; ?>
+                            </div>
+                            <a href="<?php echo base_url('blog/detail/' . $item['slug']); ?>" class="read-more">Read More <span class="arrow ion-ios-arrow-thin-right"></span></a> </div>
                     </div>
                 </div>
-                <?php endforeach; ?>
-            <?php endif; ?>
-        </div>
+            <?php endforeach; ?>
+        <?php endif; ?>
         <div class="col-md-6 col-md-offset-5">
             <?php echo $page_links; ?>
         </div>
     </div>
-    <div class="news_side col-lg-3 col-xs-12">
+</div>
+    <!-- <div class="news_side col-lg-3 col-xs-12">
         <div class="news_side_item" id="news_side_1">
             <div class="side_title">
                 <?php echo $this->lang->line('blog_latest_articles'); ?>
@@ -96,6 +99,6 @@
             <?php endforeach; ?>
             <?php endif; ?>
         </div>
-    </div>
+    </div> -->
 
 </section>

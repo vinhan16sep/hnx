@@ -7,10 +7,16 @@ class About extends Public_Controller {
 
     public function __construct() {
         parent::__construct();
+        $this->load->helper('url');
+        $this->load->library('session');
+        $this->data['lang'] = $this->session->userdata('langAbbreviation');
+        $this->load->model('about_model');
     }
 
     public function index(){
-
+    	$this->data['current_link'] = 'about';
+    	$about = $this->about_model->get_latest_article($this->data['lang']);
+    	$this->data['abouts'] = $about;
         $this->render('About_view');
     }
 }

@@ -149,4 +149,23 @@ class About_model extends CI_Model{
         }
         return $temp_slug;
     }
+
+    /**
+     *
+     * select frontend
+     *
+     */
+    
+    public function get_latest_article($lang){
+        $this->db->select('*');
+        $this->db->from('about');
+        $this->db->join('about_lang', 'about_lang.about_id = about.id', 'left');
+        $this->db->where('about_lang.language', $lang);
+        $this->db->where('about.is_deleted', 0);
+        $this->db->limit(3);
+        $this->db->order_by("about.id", "desc");
+
+        return $result = $this->db->get()->result_array();
+    }
+    
 }

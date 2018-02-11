@@ -35,6 +35,13 @@
                             echo form_input('position-en', set_value('position-en', '', false), 'class="form-control" rows="5" ')
                             ?>
                         </div>
+                        <div class="form-group">
+                            <?php
+                            echo form_label('Description', 'description-en');
+                            echo form_error('description-en');
+                            echo form_textarea('description-en', set_value('description-en', '', false), 'class="form-control"');
+                            ?>
+                        </div>
                     </div>
                     <div class="lang-hun col-md-6">
                         <div class="form-group"><b class="btn btn-success">Hungary</b></div>
@@ -61,13 +68,20 @@
                             echo form_input('position-hu', set_value('position-hu', '', false), 'class="form-control" rows="5" ')
                             ?>
                         </div>
+                        <div class="form-group">
+                            <?php
+                            echo form_label('Leírás', 'description-hu');
+                            echo form_error('description-hu');
+                            echo form_textarea('description-hu', set_value('description-hu', '', false), 'class="form-control"');
+                            ?>
+                        </div>
                     </div>
 
                     <div class="form-group col-md-12 picture">
                         <?php
                         echo form_label('Image (Kép)', 'image');
                         echo form_error('image');
-                        echo form_upload('image','','multiple');
+                        echo form_upload('image','','');
                         ?>
                     </div>
 

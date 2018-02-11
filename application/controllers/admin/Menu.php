@@ -42,7 +42,10 @@ class Menu extends Admin_Controller{
             $seperate = explode(' ||| ', $output[$key]['data']['menu_slug']);
             $output[$key]['slug_en'] = $seperate[0];
             $image = json_decode($output[$key]['data']['image']);
-        	$output[$key]['data']['image'] = $image[0];
+            if($image){
+                $output[$key]['data']['image'] = $image[0];
+            }
+        	
         }
         $this->data['menu'] = $output;
 
@@ -81,6 +84,7 @@ class Menu extends Admin_Controller{
                         	'menu_id' => $menu_id,
                         	'name' => $this->input->post('name-en'),
                         	'slug' => $unique_slug_en,
+                            'folder' => $unique_slug_en,
                         	'description' => $this->input->post('description-en'),
                         	'language' => 'en'
                         );
@@ -88,6 +92,7 @@ class Menu extends Admin_Controller{
                         	'menu_id' => $menu_id,
                         	'name' => $this->input->post('name-hu'),
                         	'slug' => $unique_slug_hu,
+                            'folder' => $unique_slug_en,
                         	'description' => $this->input->post('description-hu'),
                         	'language' => 'hu'
                         );
@@ -158,6 +163,7 @@ class Menu extends Admin_Controller{
                 	}
                 	$new_upload = json_encode($upload);
                     $data['image'] = $new_upload;
+
                 }
 				
                 try {
@@ -166,6 +172,7 @@ class Menu extends Admin_Controller{
                         'menu_id' => $id,
                     	'name' => $this->input->post('name-en'),
                     	'slug' => $unique_slug_en,
+                        'folder' => $unique_slug_en,
                     	'description' => $this->input->post('description-en'),
                     	'language' => 'en'
                     );
@@ -174,6 +181,7 @@ class Menu extends Admin_Controller{
                         'menu_id' => $id,
                     	'name' => $this->input->post('name-hu'),
                     	'slug' => $unique_slug_hu,
+                        'folder' => $unique_slug_en,
                     	'description' => $this->input->post('description-hu'),
                     	'language' => 'hu'
                     );

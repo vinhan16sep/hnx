@@ -29,8 +29,8 @@ class MY_Controller extends CI_Controller {
         $config['base_url']    = $base_url;
         $config['per_page']    = $per_page;
         $config['uri_segment'] = $uri_segment;
-        $config['prev_link'] = 'Prev';
-        $config['next_link'] = 'Next';
+        $config['prev_link'] = 'lang:pagination_prev_link';
+        $config['next_link'] = 'lang:pagination_first_link';
         $config['total_rows']  = $total_rows;
         $config['reuse_query_string'] = true;
         return $config;

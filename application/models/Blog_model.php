@@ -18,12 +18,11 @@ class Blog_model extends CI_Model {
         return $result = $this->db->get()->result_array();
     }
     
-    public function get_all_with_pagination_and_lang($limit = NULL, $start = NULL, $lang, $type) {
+    public function get_all_with_pagination_and_lang($limit = NULL, $start = NULL, $lang) {
         $this->db->select('*');
         $this->db->from('blog');
         $this->db->join('blog_lang', 'blog_lang.blog_id = blog.id', 'left');
         $this->db->where('blog_lang.language', $lang);
-        $this->db->where('blog.type', $type);
         $this->db->where('blog.is_deleted', 0);
         $this->db->limit($limit, $start);
         $this->db->order_by("blog.id", "desc");
@@ -100,12 +99,11 @@ class Blog_model extends CI_Model {
         return $result = $this->db->get()->result_array();
     }
 
-    public function get_latest_article($lang, $type){
+    public function get_latest_article($lang){
         $this->db->select('*');
         $this->db->from('blog');
         $this->db->join('blog_lang', 'blog_lang.blog_id = blog.id', 'left');
         $this->db->where('blog_lang.language', $lang);
-        $this->db->where('type', $type);
         $this->db->where('blog.is_deleted', 0);
         $this->db->limit(3);
         $this->db->order_by("blog.id", "desc");
@@ -168,6 +166,24 @@ class Blog_model extends CI_Model {
         }
         $this->db->where('blog.is_deleted', 0);
         $this->db->where('blog.id', $id);
+        $this->db->limit(1);
+
+        return $this->db->get()->row_array();
+    }
+
+    public function get_by_slug($slug, $lang = '') {
+        $this->db->query('SET SESSION group_concat_max_len = 10000000');
+        $this->db->select('blog.*, GROUP_CONCAT(blog_lang.title ORDER BY blog_lang.language separator \'|||\') as blog_title, 
+                            GROUP_CONCAT(blog_lang.description ORDER BY blog_lang.language separator \'|||\') as blog_description,
+                            GROUP_CONCAT(blog_lang.content ORDER BY blog_lang.language separator \'|||\') as blog_content,
+                            GROUP_CONCAT(blog_lang.slug ORDER BY blog_lang.language separator \'|||\') as blog_slug');
+        $this->db->from('blog');
+        $this->db->join('blog_lang', 'blog_lang.blog_id = blog.id', 'left');
+        if($lang != ''){
+            $this->db->where('blog_lang.language', $lang);
+        }
+        $this->db->where('blog.is_deleted', 0);
+        $this->db->where('blog_lang.slug', $slug);
         $this->db->limit(1);
 
         return $this->db->get()->row_array();

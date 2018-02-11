@@ -80,6 +80,7 @@ class About extends Admin_Controller{
                         	'name' => $this->input->post('name-en'),
                         	'slug' => $unique_slug_en,
                         	'position' => $this->input->post('position-en'),
+                            'description' => $this->input->post('description-en'),
                         	'language' => 'en'
                         );
                         $data_hu = array(
@@ -87,6 +88,7 @@ class About extends Admin_Controller{
                         	'name' => $this->input->post('name-hu'),
                         	'slug' => $unique_slug_hu,
                         	'position' => $this->input->post('position-hu'),
+                            'description' => $this->input->post('description-hu'),
                         	'language' => 'hu'
                         );
                         $this->about_model->insert_with_language($data_en, $data_hu);
@@ -162,6 +164,8 @@ class About extends Admin_Controller{
                         'name' => $this->input->post('name-en'),
                         'slug' => $unique_slug_en,
                         'position' => $this->input->post('position-en'),
+                        'description' => $this->input->post('description-en'),
+
                         'language' => 'en'
                     );
                     $this->about_model->update_with_language_en($id, $data_en);
@@ -170,6 +174,7 @@ class About extends Admin_Controller{
                         'name' => $this->input->post('name-hu'),
                         'slug' => $unique_slug_hu,
                         'position' => $this->input->post('position-hu'),
+                        'description' => $this->input->post('description-hu'),
                         'language' => 'hu'
                     );
                     $this->about_model->update_with_language_hu($id, $data_hu);

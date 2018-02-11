@@ -67,31 +67,66 @@
                                 <div class="navbar-collapse collapse clearfix">
                                     <ul class="navigation clearfix">
                                         <li class="current">
-                                            <a href="<?php echo base_url('homepage') ?>">Home</a>
+                                            <a href="<?php echo base_url('homepage') ?>"><?php echo $this->lang->line('homepage') ?></a>
                                         </li>
                                         <li>
-                                            <a href="<?php echo base_url('about') ?>">About us</a>
+                                            <a href="<?php echo base_url('about') ?>"><?php echo $this->lang->line('about_us') ?></a>
                                         </li>
                                         <li>
-                                            <a href="<?php echo base_url('reservation') ?>">Reservation</a>
+                                            <a href="<?php echo base_url('reservation') ?>"><?php echo $this->lang->line('reservation') ?></a>
                                         </li>
                                         <li>
-                                            <a href="<?php echo base_url('menu') ?>">Menu</a>
+                                            <a href="<?php echo base_url('menu') ?>"><?php echo $this->lang->line('menu') ?></a>
                                         </li>
                                         <li>
-                                            <a href="<?php echo base_url('blogs') ?>">Blogs</a>
+                                            <a href="<?php echo base_url('blog/list_information') ?>"><?php echo $this->lang->line('blog') ?></a>
                                         </li>
-                                        <li><a href="<?php echo base_url('contact') ?>">Contact Us</a></li>
+                                        <li><a href="<?php echo base_url('contact') ?>"><?php echo $this->lang->line('contact') ?></a></li>
                                     </ul>
                                 </div>
                             </nav>
                             <div class="more-options">
+                                <?php
+                                    $url_en = '';
+                                    $url_hu = '';
+                                    switch($current_link){
+                                        case 'list_information':
+                                            $url_en = base_url() . 'en/' . 'blog/list_information';
+                                            $url_hu = base_url() . 'hu/' . 'blog/list_information';
+                                            break;
+                                        case 'list_medicine':
+                                            $url_en = base_url() . 'en/' . 'blog/list_medicine';
+                                            $url_hu = base_url() . 'hu/' . 'blog/list_medicine';
+                                            break;
+                                        case 'blog_detail':
+                                            $url_en = base_url() . 'en/' . 'blog/detail/' . $slug;
+                                            $url_hu = base_url() . 'hu/' . 'blog/detail/' . $slug;
+                                            break;
+                                        case 'about':
+                                            $url_en = base_url() . 'en/' . 'about';
+                                            $url_hu = base_url() . 'hu/' . 'about';
+                                            break;
+                                        case 'menu':
+                                            $url_en = base_url() . 'en/' . 'menu';
+                                            $url_hu = base_url() . 'hu/' . 'menu';
+                                            break;
+                                        case 'contact':
+                                        $url_en = base_url() . 'en/' . 'contact';
+                                        $url_hu = base_url() . 'hu/' . 'contact';
+                                            break;
+                                        default:
+                                            $url_en = base_url() . 'en';
+                                            $url_hu = base_url() . 'hu';
+                                            break;
+                                    }
+                                ?>
+
                                 <ul class="social-icon-one">
                                     <li><a href="https://twitter.com/" target="_blank"><span class="fa fa-twitter"></span></a></li>
                                     <li><a href="https://www.facebook.com/" target="_blank"><span class="fa fa-instagram"></span></a></li>
                                     <li> | </li>
-                                    <li class="current"><a href="#">En</a></li>
-                                    <li><a href="#">Hu</a></li>
+                                    <li class="current"><a href="<?php echo $url_en; ?>">En</a></li>
+                                    <li><a href="<?php echo $url_hu; ?>">Hu</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -118,25 +153,25 @@
                         <div class="navbar-collapse collapse clearfix">
                             <ul class="navigation clearfix">
                                 <li class="current">
-                                    <a href="<?php echo base_url('homepage') ?>">Home</a>
+                                    <a href="<?php echo base_url('homepage') ?>"><?php echo $this->lang->line('homepage') ?></a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url('about') ?>">About us</a>
+                                    <a href="<?php echo base_url('about') ?>"><?php echo $this->lang->line('about_us') ?></a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url('reservation') ?>">Reservation</a>
+                                    <a href="<?php echo base_url('reservation') ?>"><?php echo $this->lang->line('reservation') ?></a>
                                     <ul>
                                         <li><a href="./reservation.html">Reservation</a></li>
                                         <li><a href="./reservation-standard.html">Reservation Standard</a></li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url('menu') ?>">Menu</a>
+                                    <a href="<?php echo base_url('menu') ?>"><?php echo $this->lang->line('menu') ?></a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url('blogs') ?>">Blogs</a>
+                                    <a href="<?php echo base_url('blog/list_information') ?>"><?php echo $this->lang->line('blog') ?></a>
                                 </li>
-                                <li><a href="<?php echo base_url('contact') ?>">Contact Us</a></li>
+                                <li><a href="<?php echo base_url('contact') ?>"><?php echo $this->lang->line('contact') ?></a></li>
                             </ul>
                         </div>
                     </nav>

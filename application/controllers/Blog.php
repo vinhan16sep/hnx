@@ -9,7 +9,7 @@ class Blog extends Public_Controller {
         $this->load->helper('url');
         $this->load->library('session');
         $this->load->model('blog_model');
-        $this->load->model('cover_model');
+        // $this->load->model('cover_model');
         $this->data['lang'] = $this->session->userdata('langAbbreviation');
     }
 
@@ -29,13 +29,15 @@ class Blog extends Public_Controller {
         $this->data['page_links'] = $this->pagination->create_links();
         $this->data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 
-        $result = $this->blog_model->get_all_with_pagination_and_lang($per_page, $this->data['page'], $this->data['lang'], 0);
+        $result = $this->blog_model->get_all_with_pagination_and_lang($per_page, $this->data['page'], $this->data['lang']);
 
         $this->data['current_link'] = 'list_information';
-        $this->data['latest_articles'] = $this->blog_model->get_latest_article($this->data['lang'], 0);
-        $this->data['most_viewed'] = $this->blog_model->fetch_most_viewed_article(0, $this->data['lang']);
+        // $this->data['latest_articles'] = $this->blog_model->get_latest_article($this->data['lang'], 0);
+        // $this->data['most_viewed'] = $this->blog_model->fetch_most_viewed_article(0, $this->data['lang']);
         $this->data['blog'] = $result;
-        $this->data['cover'] = $this->cover_model->get_by_id(1);
+
+        // print_r($result);die;
+        // $this->data['cover'] = $this->cover_model->get_by_id(1);
         $this->render('blog_view');
     }
 
@@ -43,7 +45,7 @@ class Blog extends Public_Controller {
         $this->load->library('pagination');
         $base_url = base_url() . 'blog/list_medicine';
         $total_rows = $this->blog_model->count_all(1);
-        $per_page = 10;
+        $per_page = 1;
         $uri_segment = 3;
         $config = $this->pagination_config($base_url, $total_rows, $per_page, $uri_segment);
         $this->pagination->initialize($config);
@@ -57,28 +59,25 @@ class Blog extends Public_Controller {
         $this->data['latest_articles'] = $this->blog_model->get_latest_article($this->data['lang'], 1);
         $this->data['most_viewed'] = $this->blog_model->fetch_most_viewed_article(1, $this->data['lang']);
         $this->data['blog'] = $result;
-        $this->data['cover'] = $this->cover_model->get_by_id(2);
+        // $this->data['cover'] = $this->cover_model->get_by_id(2);
         $this->render('blog_view');
     }
 
-    public function detail($type = NULL, $id = null){
-        $blog_id = isset($id) ? (int) $id : (int) $this->input->post('id');
+    public function detail($slug = NULL){
         $this->data['current_link'] = 'blog_detail';
-        $this->data['blog_id'] = $blog_id;
-        $this->data['type'] = $type;
-        $this->data['latest_articles'] = $this->blog_model->get_latest_article($this->data['lang'], $type);
-        $this->data['most_viewed'] = $this->blog_model->fetch_most_viewed_article($type, $this->data['lang']);
-        $this->data['blog'] = $this->blog_model->get_by_id($blog_id, $this->data['lang']);
+        $this->data['slug'] = $slug;
+        $this->data['blog'] = $this->blog_model->get_by_slug($slug, $this->data['lang']);
+        // print_r($this->data['blog']);die;
 
-        if (!$this->data['blog']) {
+        if (!$this->data['blog']['blog_slug']) {
             redirect('', 'refresh');
         }
-        $data = array(
-            'viewed' => (int)$this->data['blog']['viewed'] + 1
-        );
-        $this->blog_model->update_view_number($blog_id, $data);
+        // $data = array(
+        //     'viewed' => (int)$this->data['blog']['viewed'] + 1
+        // );
+        // $this->blog_model->update_view_number($blog_id, $data);
 
-        $this->render('detail_blog_view');
+        $this->render('detail_blogs_view');
     }
 
 }

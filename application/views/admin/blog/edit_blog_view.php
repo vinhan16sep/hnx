@@ -150,6 +150,13 @@
                         echo form_upload('picture', set_value('picture'), 'class="form-control"');
                         ?>
                     </div>
+                    <div class="form-group">
+                        <?php
+                        echo form_label('Slug', 'slug-en');
+                        echo form_error('slug-en');
+                        echo form_input('slug-en', set_value('slug-en', $blog['slug_en']), 'class="form-control" id="slug-en" readonly');
+                        ?>
+                    </div>
                 </div>
 
                 
@@ -163,13 +170,7 @@
                         echo form_input('title_en', set_value('title_en', $blog['title_en']), 'class="form-control" id="title-en"');
                         ?>
                     </div>
-                    <div class="form-group">
-                        <?php
-                        echo form_label('Slug', 'slug-en');
-                        echo form_error('slug-en');
-                        echo form_input('slug-en', set_value('slug-en', $blog['slug_en']), 'class="form-control" id="slug-en" readonly');
-                        ?>
-                    </div>
+                    
                     <div class="form-group description">
                         <?php
                         echo form_label('Description', 'description_en');
@@ -194,13 +195,6 @@
                         echo form_label('Cím', 'title_hu');
                         echo form_error('title_hu');
                         echo form_input('title_hu', set_value('title_hu', $blog['title_hu']), 'class="form-control" id="title-hu"');
-                        ?>
-                    </div>
-                    <div class="form-group">
-                        <?php
-                        echo form_label('Meztelen csiga', 'slug-hu');
-                        echo form_error('slug-hu');
-                        echo form_input('slug-hu', set_value('slug-hu', $blog['slug_hu']), 'class="form-control" id="slug-hu" readonly');
                         ?>
                     </div>
                     <div class="form-group description">
