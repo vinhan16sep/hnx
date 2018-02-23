@@ -3,8 +3,8 @@
 </section>
 <section class="page-title" style="background-image:url(<?php echo site_url('assets/public/img/background/about.jpg')?>);">
     <div class="auto-container">
-        <div class="title">Read our</div>
-        <h2>Blog</h2> </div>
+        <div class="title"><?php echo $this->lang->line('read_our') ?></div>
+        <h2><?php echo $this->lang->line('blog') ?></h2> </div>
 </section>
 <section class="blog-page-section">
     <!-- <div class="content_title page_list">

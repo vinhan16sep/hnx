@@ -2,7 +2,7 @@
     <div class="auto-container">
         <div class="row clearfix">
             <div class="column col-md-4 col-sm-6 col-xs-12">
-                <h3>Contact</h3>
+                <h3><?php echo $this->lang->line('contact') ?></h3>
                 <div class="text">765 - 879 - 1077
                     <br />55 Angelica Street, NY
                     <br />info@monde.com</div>
@@ -17,7 +17,7 @@
                 </ul>
             </div>
             <div class="column col-md-4 col-sm-6 col-xs-12">
-                <h3>Hours</h3>
+                <h3><?php echo $this->lang->line('hours') ?></h3>
                 <div class="text">Every day
                     <br />from Noon to 1:30 pm
                     <br />and from 7 pm to 9:30 pm </div>

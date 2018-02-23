@@ -38,6 +38,7 @@ $lang['blog_latest_articles'] = 'Latest articles';
 $lang['blog_most_viewed'] = 'Most viewed';
 
 // Footer
+$lang['hours'] = 'hours';
 $lang['company'] = 'Company';
 $lang['history'] = 'History';
 $lang['duty'] = 'Views and duties';
@@ -101,3 +102,48 @@ $lang['history_title'] = 'History';
 
 // Search
 $lang['searchResult'] = 'Search results';
+
+/* Homepage */
+$lang['discover_our'] = 'DISCOVER OUR';
+$lang['restaurant'] = 'RESTAURANT';
+$lang['unique_story'] = 'Unique Story';
+$lang['since'] = 'Since';
+$lang['alen_remsi'] = 'Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis nibhid elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsa ipsum velit. Namec tellus adio tincidunt auctor a ornare odioed nauris vitae era.';
+$lang['always_delicious'] = 'Always Delicious';
+$lang['main_menu'] = 'Main Menu';
+$lang['enjoy_together'] = 'ENJOY TOGETHER';
+$lang['useful_information'] = 'USEFUL INFORMATION';
+$lang['location'] = 'Location';
+$lang['dress_code'] = 'Dress Code';
+
+/* About */
+$lang['welcome'] = 'WELCOME';
+$lang['story'] = 'STORY';
+$lang['get_the_best'] = 'GET THE BEST';
+$lang['get_the_best_text'] = 'Aenean sollicitudin, lorem quis bibendum auctorisi elit consequat ipsum sagittis remibaid elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sedon mauris vitae erat consequat auctor eu in elit lass aptent taciti sociosqu.';
+$lang['find_a_table'] = 'Find A Table';
+$lang['unique'] = 'unique';
+$lang['unique_text'] = 'Aenean sollicitudin, lorem quis bibendum aucsim elit consuat ipsum, nec sagittis nibhid elit. Duis sed odio sit amet nibh vulput ate sus a sit amet mauris. Morbi accumsa ipsum velit. Namec lus adio tincid ant auctor a ornare odioed nauris vitae era.';
+$lang['facts'] = 'facts';
+$lang['the_place'] = 'the place';
+$lang['the_place_text'] = 'Unique experience for the Holidays at Monde. Proina nibhel velit auctor aliquet. Aenean sollicit udine oremual biben dum auctor, nisi elit consequat ipsum, nec sagittis am sem nibhad elit. Duis sed odio sit amet nibvupususa amet uris. Morbi accumsan ipsum vitamec tellus bodio tincwa idunt auctor a ornare odio.';
+$lang['magical_experience'] = 'magical experience';
+$lang['the_team'] = 'the team';
+
+/* Menu */
+$lang['exceptional'] = 'exceptional';
+$lang['cocktail_card'] = 'cocktail card';
+$lang['chefs_selection'] = 'chefs selection';
+$lang['today’s_special'] = 'today’s special';
+
+/* blog */
+$lang['read_our'] = 'read our';
+
+/* comtact */
+$lang['get_in_touch'] = 'get in touch';
+$lang['email_address'] = 'Email Address';
+$lang['name'] = 'Name';
+$lang['your_message'] = 'Your Message';
+$lang['telephone_reservation'] = 'Telephone Reservation';
+$lang['please_call'] = 'Please Call';
+

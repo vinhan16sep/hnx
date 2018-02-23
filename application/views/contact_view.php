@@ -1,8 +1,8 @@
 
 <section class="page-title" style="background-image:url(<?php echo site_url('assets/public/img/background/contact.jpg')?>);">
     <div class="auto-container">
-        <div class="title">Get in Touch</div>
-        <h2>Contact</h2> </div>
+        <div class="title"><?php echo $this->lang->line('get_in_touch') ?></div>
+        <h2><?php echo $this->lang->line('contact') ?></h2> </div>
 </section>
 <section class="contact-page-section">
     <div id="encypted_ppbtn" style="display: none;">
@@ -23,24 +23,24 @@
         </div>
         <div class="form-column">
             <div class="inner-column">
-                <h2>Get In touch</h2>
+                <h2><?php echo $this->lang->line('get_in_touch') ?></h2>
                 <div class="contact-form alternate">
                     <?php
                         echo form_open_multipart('', array('class' => 'form-group'));
 
-                            echo form_label('Email Address*', 'email');
+                            echo form_label($this->lang->line('email_address').'*', 'email');
                             echo form_error('email', 'class="email_error');
                             echo '<span class="email_error" style="color: red"></span>';
                             echo form_input('email', set_value('email'), 'class="form-group email"');
                             
 
-                            echo form_label('Name*', 'name');
+                            echo form_label($this->lang->line('name').'*', 'name');
                             echo form_error('name');
                             echo '<span class="name_error" style="color: red"></span>';
                             echo form_input('name', set_value('name'), 'class="form-group name"');
                             
 
-                            echo form_label('Your Message*', 'message');
+                            echo form_label($this->lang->line('your_message').'*', 'message');
                             echo form_error('message');
                             echo form_textarea('message', set_value('message'), 'class="form-group message"');
 
@@ -54,8 +54,8 @@
 </section>
 <section class="telephone-reserve">
     <div class="auto-container">
-        <h3>Telephone Reservation</h3>
-        <div class="text">Please Call 765-879-1077</div>
+        <h3><?php echo $this->lang->line('telephone_reservation') ?></h3>
+        <div class="text"><?php echo $this->lang->line('please_call') ?> 765-879-1077</div>
     </div>
 </section>
 
