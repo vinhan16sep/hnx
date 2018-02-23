@@ -18,7 +18,8 @@
     <div class="outer-container clearfix">
         <div class="map-column">
             <div class="map-outer">
-                <div class="map-canvas" data-zoom="12" data-lat="-37.817085" data-lng="144.955631" data-type="roadmap" data-hue="#ffc400" data-title="Envato" data-icon-path="<?php echo site_url('assets/public/img/icons/map-marker.png')?>" data-content="Melbourne VIC 3000, Australia<br><a href='mailto:info@youremail.com'>info@youremail.com</a>"> </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d86288.88107307177!2d19.0154827!3d47.4796357!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741dce4f118fd69%3A0xadecd2e5acb4066!2zSMOgbuG7mWkgWMawYSBWaWV0bmFtZXNlIFJlc3RhdXJhbnQ!5e0!3m2!1sen!2s!4v1519405213351" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2696.0333856969473!2d19.06063441562648!3d47.489262979177084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741dc5afeef106d%3A0x8363c708108d48b8!2zSMOgbuG7mWkgWMawYSBLw6Fsdmlu!5e0!3m2!1sen!2s!4v1519405252585" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
         </div>
         <div class="form-column">
@@ -52,13 +53,17 @@
         </div>
     </div>
 </section>
+
+<!--
+HIDE THIS SECTION
+
 <section class="telephone-reserve">
     <div class="auto-container">
         <h3><?php echo $this->lang->line('telephone_reservation') ?></h3>
         <div class="text"><?php echo $this->lang->line('please_call') ?> 765-879-1077</div>
     </div>
 </section>
-
+-->
 
 
 <script type="text/javascript" src="<?php echo base_url('assets/public/js/jquery-3.2.1.js'); ?>"></script>

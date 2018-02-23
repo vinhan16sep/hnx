@@ -122,8 +122,16 @@
                                 ?>
 
                                 <ul class="social-icon-one">
-                                    <li><a href="https://twitter.com/" target="_blank"><span class="fa fa-twitter"></span></a></li>
-                                    <li><a href="https://www.facebook.com/" target="_blank"><span class="fa fa-instagram"></span></a></li>
+                                    <li>
+                                        <a href="http://facebook.com/hanoixuarestaurant" target="_blank">
+                                            <span class="fa fa-facebook-square"></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="http://instagram.com/hanoixuarestaurant" target="_blank">
+                                            <span class="fa fa-instagram"></span>
+                                        </a>
+                                    </li>
                                     <li> | </li>
                                     <li class="current"><a href="<?php echo $url_en; ?>">En</a></li>
                                     <li><a href="<?php echo $url_hu; ?>">Hu</a></li>
@@ -137,7 +145,7 @@
         <div class="sticky-header">
             <div class="auto-container clearfix">
                 <div class="logo pull-left">
-                    <a href="./index.html" class="img-responsive" title="Tali">
+                    <a href="<?php echo base_url('homepage') ?>" class="img-responsive" title="Tali">
                         <img src="<?php echo site_url('assets/public/img/logo-small.png')?>" alt="Tali" title="Tali" />
                     </a>
                 </div>
@@ -173,6 +181,7 @@
                                 </li>
                                 <li><a href="<?php echo base_url('contact') ?>"><?php echo $this->lang->line('contact') ?></a></li>
                             </ul>
+
                         </div>
                     </nav>
                 </div>
