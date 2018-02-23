@@ -114,9 +114,9 @@
 	                <div class="inner-box">
 	                    <div class="info clearfix">
 	                        <div class="pull-left">
-	                            <h3><a href="./shop-single.html"><?php echo $value['name'] ?></a></h3> </div>
+	                            <h3><a href="javascript:void(0);"><?php echo $value['name'] ?></a></h3> </div>
 	                        <div class="pull-right">
-	                            <div class="price"><?php echo $value['price'] ?></div>
+	                            <div class="price">$<?php echo $value['price'] ?></div>
 	                        </div>
 	                    </div>
 	                    <div class="text"><?php echo $value['description'] ?></div>
@@ -127,15 +127,24 @@
     </div>
 </section>
 
+<!--
+
+HIDE THIS SECTION
+
 <section class="call-to-action" style="background-image:url('<?php echo site_url('assets/public/img/background/2.jpg')?>');">
     <div class="auto-container">
         <h2><?php echo $this->lang->line('enjoy_together') ?></h2>
     </div>
 </section>
+-->
+
+<!--
+
+HIDE THIS SECTION
 
 <section class="reservation-section">
     <div class="auto-container">
-        <!-- <div class="sec-title centered">
+         <div class="sec-title centered">
             <div class="title">Magical Experience</div>
             <h2>Reservation</h2> </div>
         <div class="reserve-form">
@@ -182,12 +191,15 @@
                 </div>
             </div>
             </form>
-        </div> -->
+        </div>
     </div>
 </section>
+-->
 
 <section class="testimonial-section" style="background-image:url('<?php echo site_url('assets/public/img/background/3.jpg')?>');">
     <div class="auto-container">
+        <h2><?php echo $this->lang->line('enjoy_together') ?></h2>
+
         <div class="single-item-carousel owl-carousel owl-theme">
             <div class="testimonial-block">
                 <div class="inner-box">
@@ -211,25 +223,31 @@
     </div>
 </section>
 
+<!--
 <section class="information-section">
     <div class="auto-container">
+
         <div class="row clearfix">
-            <div class="info-column col-md-4 col-sm-12 col-xs-12">
-                <h2><?php echo $this->lang->line('useful_information') ?></h2>
-                <h3><?php echo $this->lang->line('location') ?></h3>
-                <div class="text">Monde Restaurant
-                    <br />55 Angelica Street
-                    <br />10003 New York
-                    <br />USA</div>
-                <h3><?php echo $this->lang->line('dress_code') ?></h3>
-                <div class="text">Appropriate dress code required
-                    <br />T shirts, shorts and sports clothes will be refused</div>
-            </div>
-            <div class="map-column col-md-8 col-sm-12 col-xs-12">
-                <div class="map-outer">
-                    <div class="map-canvas" data-zoom="12" data-lat="-37.817085" data-lng="144.955631" data-type="roadmap" data-hue="#ffc400" data-title="Envato" data-icon-path="<?php echo site_url('assets/public/img/icons/map-marker.png')?>" data-content="Melbourne VIC 3000, Australia<br><a href='mailto:info@youremail.com'>info@youremail.com</a>"> </div>
+            <h2><?php echo $this->lang->line('useful_information') ?></h2>
+            <div class="info-column col-md-6 col-sm-12 col-xs-12">
+                <h3>Hànội Xưa Nagyvárad tér</h3>
+                <div class="text">
+                    +36 1 314 6736
+                    <br />Budapest, Ernő u. 30-34., 1096 Hungary
                 </div>
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d86288.88107307177!2d19.0154827!3d47.4796357!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741dce4f118fd69%3A0xadecd2e5acb4066!2zSMOgbuG7mWkgWMawYSBWaWV0bmFtZXNlIFJlc3RhdXJhbnQ!5e0!3m2!1sen!2s!4v1519399262391" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+            <div class="info-column col-md-6 col-sm-12 col-xs-12">
+                <h3>Hànội Xưa Kálvin</h3>
+                <div class="text">
+                    +36 30 364 3699
+                    <br />Budapest, Üllői út 2-4, 1085 Hungary
+                </div>
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2696.0333856969473!2d19.06063441562648!3d47.489262979177084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741dc5afeef106d%3A0x8363c708108d48b8!2zSMOgbuG7mWkgWMawYSBLw6Fsdmlu!5e0!3m2!1sen!2s!4v1519404395848" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
         </div>
     </div>
 </section>
+-->

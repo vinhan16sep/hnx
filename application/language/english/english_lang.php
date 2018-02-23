@@ -11,15 +11,10 @@ $lang['homepage'] = 'Home';
 $lang['about_us'] = 'About us';
 $lang['reservation'] = 'Reservation';
 $lang['menu'] = 'Menu';
-$lang['product'] = 'Products';
 $lang['blog'] = 'News - Events';
-$lang['recruit'] = 'Job opportunities';
 $lang['contact'] = 'Contact';
 $lang['search'] = 'Search';
 $lang['readmore'] = 'Read more';
-$lang['sub_1'] = 'History';
-$lang['sub_2'] = 'Medicines';
-$lang['sub_3'] = 'Healthy Infomation';
 
 // Index
 $lang['index_about'] = 'About Us';
@@ -38,7 +33,9 @@ $lang['blog_latest_articles'] = 'Latest articles';
 $lang['blog_most_viewed'] = 'Most viewed';
 
 // Footer
-$lang['hours'] = 'hours';
+$lang['footer_hours'] = 'hours';
+$lang['footer_hours_1'] = 'Monday - Sunday : 11am-9.30pm';
+$lang['footer_hours_2'] = 'Monday - Saturday : 11am-9.30pm';
 $lang['company'] = 'Company';
 $lang['history'] = 'History';
 $lang['duty'] = 'Views and duties';
@@ -57,40 +54,6 @@ $lang['company_phone'] = 'Phone: 0166 913 1450 - 0246 286 5406';
 $lang['company_fax'] = ' ';
 $lang['company_email'] = 'E-mail: info@thienlocxuan.com.vn';
 $lang['contact_us'] = 'Contact us:';
-
-// Product dropdown
-$lang['product_type'] = 'Type';
-$lang['product_group'] = 'Group';
-
-// Product detail
-$lang['product_information'] = 'Information';
-$lang['product_faq'] = 'FAQ';
-$lang['product_question'] = 'Question';
-$lang['product_content'] = 'Content';
-
-$lang['product_ingredients'] = 'Ingredients';
-$lang['product_attribution'] = 'Attribution';
-$lang['product_dosage'] = 'Dosage';
-$lang['product_contraindicating'] = 'Contraindicating';
-$lang['product_expired'] = 'Expired Day';
-$lang['product_certification'] = 'Certification';
-$lang['product_presentation'] = 'Presentation';
-
-// Contact form
-$lang['contact_greeting'] = 'Hi, send question to us and get answer as soon as possible';
-$lang['contact_name'] = 'Name';
-$lang['contact_email'] = 'Email';
-$lang['contact_phone'] = 'Phone';
-$lang['contact_wishing'] = 'Wishing product';
-$lang['contact_content'] = 'Content';
-$lang['contact_content_placeholder'] = 'What do you need to ask?';
-$lang['contact_send'] = 'Send';
-$lang['contact_image'] = 'GPP Certification Image';
-$lang['contact_address_1'] = 'Head office: No 76 Lane 472 Lac Long Quan Street - Tay Ho - Hanoi';
-$lang['contact_address_2'] = 'Trading address: Medicine counter no 331 - Hapulico Medical and Medical Equipment Distribution Center No 1 Nguyen Huy Tuong - Thanh Xuan - Hanoi';
-
-// Medicine
-$lang['medicine_title'] = 'Medicine';
 
 // Recruitment
 $lang['recruitment_expired'] = 'Expired';
@@ -139,7 +102,7 @@ $lang['today’s_special'] = 'today’s special';
 /* blog */
 $lang['read_our'] = 'read our';
 
-/* comtact */
+/* contact */
 $lang['get_in_touch'] = 'get in touch';
 $lang['email_address'] = 'Email Address';
 $lang['name'] = 'Name';

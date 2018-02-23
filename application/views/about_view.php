@@ -23,7 +23,7 @@
                 <div class="text">
                     <?php echo $this->lang->line('get_the_best_text') ?>
                 </div>
-                <div class="text-center"> <a href="#" class="theme-btn btn-style-four"><?php echo $this->lang->line('find_a_table') ?></a> </div>
+                <!--<div class="text-center"> <a href="#" class="theme-btn btn-style-four"><?php echo $this->lang->line('find_a_table') ?></a> </div>-->
             </div>
         </div>
     </div>

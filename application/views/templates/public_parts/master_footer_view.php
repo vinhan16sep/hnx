@@ -3,24 +3,51 @@
         <div class="row clearfix">
             <div class="column col-md-4 col-sm-6 col-xs-12">
                 <h3><?php echo $this->lang->line('contact') ?></h3>
-                <div class="text">765 - 879 - 1077
-                    <br />55 Angelica Street, NY
-                    <br />info@monde.com</div>
+                <div class="text">
+                    <strong>Hànội Xưa Nagyvárad tér</strong>
+                    <br />+36 1 314 6736
+                    <br />Budapest, Ernő u. 30-34., 1096 Hungary
+                    <br />hanoixuarestaurant@gmail.com
+                </div>
+                <br>
+                <div class="text">
+                    <strong>Hànội Xưa Kálvin</strong>
+                    <br />+36 30 364 3699
+                    <br />Budapest, Üllői út 2-4, 1085 Hungary
+                    <br />hanoixuakalvin@gmail.com
+                </div>
             </div>
             <div class="column col-md-4 col-sm-6 col-xs-12">
                 <div class="logo-box">
-                    <a href="./index.html"><img src="<?php echo site_url('assets/public/img/logo-small.png')?>" alt="" /></a>
+                    <a href="<?php echo base_url('homepage') ?>"><img src="<?php echo site_url('assets/public/img/logo-small.png')?>" alt="" /></a>
                 </div>
                 <ul class="social-icon-two">
-                    <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                    <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+                    <li>
+                        <a href="http://facebook.com/hanoixuarestaurant" target="_blank">
+                            <span class="fa fa-facebook-square"></span>/ hanoixuarestaurant
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://facebook.com/hanoixuakalvin" target="_blank">
+                            <span class="fa fa-facebook-square"></span>/ hanoixuakalvin
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://instagram.com/hanoixuarestaurant" target="_blank">
+                            <span class="fa fa-instagram"></span>/ hanoixuarestaurant
+                        </a>
+                    </li>
                 </ul>
             </div>
             <div class="column col-md-4 col-sm-6 col-xs-12">
-                <h3><?php echo $this->lang->line('hours') ?></h3>
-                <div class="text">Every day
-                    <br />from Noon to 1:30 pm
-                    <br />and from 7 pm to 9:30 pm </div>
+                <h3><?php echo $this->lang->line('footer_hours') ?></h3>
+                <div class="text">
+                    <strong>Hànội Xưa Nagyvarad Ter</strong>
+                    <br /><?php echo $this->lang->line('footer_hours_1') ?>
+                    <br />
+                    <strong>Hànội Xưa Kálvin</strong>
+                    <br /><?php echo $this->lang->line('footer_hours_2') ?>
+                </div>
             </div>
             <div class="column col-md-12 col-sm-12 col-xs-12">
                 <div class="copyright">Copyright &copy; Hanoi Xua Restaurant. All Rights Reserved.</div>
@@ -32,7 +59,7 @@
 <div class="scroll-to-top scroll-to-target" data-target="html"><span class="icon fa fa-angle-up"></span></div>
 
 <script src="<?php echo site_url('assets/public/lib/js/jquery.js')?>"></script>
-<script src="<?php echo site_url('assets/public/lib/js/bootstrap.min.js')?>"></script>
+<script src="<?php echo site_url('assets/public/js/bootstrap.js')?>"></script>
 <script src="<?php echo site_url('assets/public/lib/revolution/js/jquery.themepunch.revolution.min.js')?>"></script>
 <script src="<?php echo site_url('assets/public/lib/revolution/js/jquery.themepunch.tools.min.js')?>"></script>
 <script src="<?php echo site_url('assets/public/lib/revolution/js/extensions/revolution.extension.actions.min.js')?>"></script>
