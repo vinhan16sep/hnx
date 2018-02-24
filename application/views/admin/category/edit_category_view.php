@@ -1,11 +1,10 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
-
 <div class="content-wrapper" style="min-height: 916px;">
     <section class="row">
         <div class="container col-md-12">
             <div class="modified-mode">
-                <div class="col-lg-10 col-lg-offset-0 row" style="margin-left: 15px;">
-                    <h1>ADD</h1>
+                <div class="col-lg-10 col-lg-offset-0" style="margin-left: 15px;">
+                    <h1>UPDATE</h1>
                     <?php
                     echo form_open_multipart('', array('class' => 'form-horizontal'));
                     ?>
@@ -16,7 +15,7 @@
                             <?php
                             echo form_label('Name', 'name-en');
                             echo form_error('name-en');
-                            echo form_input('name-en', set_value('name-en'), 'class="form-control" id="title-en"');
+                            echo form_input('name-en', set_value('name-en', $category['name_en']), 'class="form-control" id="title-en"');
                             ?>
                         </div>
 
@@ -24,15 +23,7 @@
                             <?php
                             echo form_label('Slug', 'slug-en');
                             echo form_error('slug-en');
-                            echo form_input('slug-en', set_value('slug-en'), 'class="form-control" id="slug-en" readonly');
-                            ?>
-                        </div>
-
-                        <div class="form-group">
-                            <?php
-                            echo form_label('Description', 'description-en');
-                            echo form_error('description-en');
-                            echo form_textarea('description-en', set_value('description-en', '', false), 'class="form-control"');
+                            echo form_input('slug-en', set_value('slug-en', $category['slug_en']), 'class="form-control" id="slug-en" readonly');
                             ?>
                         </div>
                     </div>
@@ -42,7 +33,7 @@
                             <?php
                             echo form_label('Név', 'name-hu');
                             echo form_error('name-hu');
-                            echo form_input('name-hu', set_value('name-hu'), 'class="form-control" id="title-hu"');
+                            echo form_input('name-hu', set_value('name-hu', $category['name_hu']), 'class="form-control" id="title-hu"');
                             ?>
                         </div>
 
@@ -50,61 +41,11 @@
                             <?php
                             echo form_label('Meztelen csiga', 'slug-hu');
                             echo form_error('slug-hu');
-                            echo form_input('slug-hu', set_value('slug-hu'), 'class="form-control" id="slug-hu" readonly');
-                            ?>
-                        </div>
-
-                        <div class="form-group">
-                            <?php
-                            echo form_label('Leírás', 'description-hu');
-                            echo form_error('description-hu');
-                            echo form_textarea('description-hu', set_value('description-hu', '', false), 'class="form-control"');
+                            echo form_input('slug-hu', set_value('slug-hu', $category['slug_en']), 'class="form-control" id="slug-hu" readonly');
                             ?>
                         </div>
                     </div>
-
-                    <div class="form-group col-md-12 picture">
-                        <?php
-                        echo form_label('Image (Kép)', 'image');
-                        echo form_error('image');
-                        echo form_upload('image_list[]','','multiple');
-                        ?>
-                    </div>
-
-                    <div class="form-group col-md-12">
-                        <?php
-                        echo form_label('Category (Kategória)', 'category');
-                        echo form_error('category');
-                        echo form_dropdown('category', set_value('category', $category, true), 0, 'class="form-control"')
-                        ?>
-                    </div>
-
-                    <div class="form-group col-md-12">
-                        <?php
-                        echo form_label('Store', 'store');
-                        echo form_error('store');
-                        echo form_dropdown('store', set_value('store', array(1 => 'Base 1 (Bázis 1)', 2 => 'Base 2 (Bázis 2)'), false), 0, 'class="form-control"')
-                        ?>
-                    </div>
-
-                    <div class="form-group col-md-12">
-                        <?php
-                        echo form_label('Price (Ár)', 'price');
-                        echo form_error('price');
-                        echo form_input('price', set_value('price', '', false), 'class="form-control" rows="5" ')
-                        ?>
-                    </div>
-
-                    <div class="form-group col-md-12">
-                        <?php
-                        echo form_label('Type', 'type');
-                        echo form_error('type');
-                        echo form_dropdown('type', set_value('type', array(0 => 'Food (Élelmiszer)', 1 => 'Drink (Ital)'), false), 0, 'class="form-control"')
-                        ?>
-                    </div>
-                    <br>
                     <div class="form-group col-sm-12 text-right">
-                        <input type="hidden" name="url" value="<?php echo $this->uri->segment(4); ?>">
                         <?php
                         echo form_submit('submit', 'OK', 'class="btn btn-primary"');
                         echo form_close();
@@ -143,9 +84,5 @@
         external_filemanager_path: "<?php echo site_url('filemanager/'); ?>",
         filemanager_title: "Responsive Filemanager",
         external_plugins: {"filemanager": "<?php echo site_url('filemanager/plugin.min.js'); ?>"}
-    });
-
-    $('.btn-eng').click(function(){
-        $('.lang-eng').slideToggle();
     });
 </script>

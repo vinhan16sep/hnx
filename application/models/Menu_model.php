@@ -156,19 +156,43 @@ class Menu_model extends CI_Model{
      *
      */
     
-    public function get_latest_article($lang, $status = null, $limit = null, $start = null, $type = null){
-        $this->db->select('*');
+    public function get_latest_article_special($lang, $status = null, $store = 1, $limit = null, $start = null){
+        $this->db->select('menu.*, menu.id as menu_id, menu_lang.*, category_lang.name as cate_name');
         $this->db->from('menu');
-        $this->db->join('menu_lang', 'menu_lang.menu_id = menu.id', 'left');
+        $this->db->join('menu_lang', 'menu_lang.menu_id = menu.id');
+        $this->db->join('category', 'category.id = menu.category_id');
+        $this->db->join('category_lang', 'category_lang.category_id = category.id');
         $this->db->where('menu_lang.language', $lang);
+        $this->db->where('category_lang.language', $lang);
         if($status != null){
-            $this->db->where('status', $status);
-        }
-        if($type != null){
-            $this->db->where('type', $type);
+            $this->db->where('menu.status', $status);
         }
         $this->db->where('menu.is_deleted', 0);
+        $this->db->where('menu.store', $store);
         $this->db->limit($limit, $start);
+        $this->db->order_by("menu.id", "desc");
+
+        return $result = $this->db->get()->result_array();
+    }
+
+    public function get_latest_article($lang, $status = null, $type = 0, $category = null, $store = 1){
+        $this->db->select('menu.*, menu.id as menu_id, menu_lang.*, category_lang.name as cate_name');
+        $this->db->from('menu');
+        $this->db->join('menu_lang', 'menu_lang.menu_id = menu.id');
+        $this->db->join('category', 'category.id = menu.category_id');
+        $this->db->join('category_lang', 'category_lang.category_id = category.id');
+        $this->db->where('menu_lang.language', $lang);
+        $this->db->where('category_lang.language', $lang);
+        if($status != null){
+            $this->db->where('menu.status', $status);
+        }
+        $this->db->where('menu.type', $type);
+        if($category != null){
+            $this->db->where('menu.category_id', $category);
+        }
+        $this->db->where('menu.is_deleted', 0);
+        $this->db->where('menu.store', $store);
+        // $this->db->limit($limit, $start);
         $this->db->order_by("menu.id", "desc");
 
         return $result = $this->db->get()->result_array();
