@@ -26,23 +26,33 @@
             <h2><?php echo $this->lang->line('main_menu') ?></h2>
         </div>
         <div class="row clearfix">
-            <div class="container-fluid">
-                <h3 style="padding: 15px; background: #902d2e; color: #fff; margin-bottom: 30px;">Phan loai do an</h3>
-            </div>
             <?php if ($main_menu): ?>
             <?php foreach ($main_menu as $key => $value): ?>
-                <div class="menu-block col-md-4 col-sm-6 col-xs-12">
-                    <div class="inner-box">
-                        <div class="info clearfix">
-                            <div class="pull-left">
-                                <h3><a href=""><?php echo $value['name'] ?></a></h3> </div>
-                            <div class="pull-right">
-                                <div class="price">$<?php echo $value['price'] ?></div>
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <h3 style="padding: 15px; background: #902d2e; color: #fff; margin-bottom: 30px;"><?php echo $key ?></h3>
+                </div>
+                <?php if ($value): ?>
+                    <?php foreach ($value as $k => $val): ?>
+                        <div class="menu-block col-md-4 col-sm-6 col-xs-12">
+                            <div class="inner-box">
+                                <div class="info clearfix">
+                                    <div class="pull-left">
+                                        <h3><a href=""><?php echo $val['name'] ?></a></h3> </div>
+                                    <div class="pull-right">
+                                        <div class="price">$<?php echo $val['price'] ?></div>
+                                    </div>
+                                </div>
+                                <div class="text"><?php echo $val['description'] ?></div>
                             </div>
                         </div>
-                        <div class="text"><?php echo $value['description'] ?></div>
+                    <?php endforeach ?>
+                <?php else: ?>
+                    <div class="menu-block col-md-4 col-sm-6 col-xs-12">
+                        <div class="inner-box">
+                            NaN:NaN
+                        </div>
                     </div>
-                </div>
+                <?php endif ?>
             <?php endforeach ?>
             <?php endif ?>
         </div>
@@ -54,24 +64,34 @@
             <div class="title"><?php echo $this->lang->line('exceptional') ?></div>
             <h2><?php echo $this->lang->line('cocktail_card') ?></h2> </div>
         <div class="row clearfix">
-            <div class="container-fluid">
-                <h3 style="padding: 15px; background: #fff; color: #902d2e; margin-bottom: 30px;">Phan loai do an</h3>
-            </div>
             <?php if ($cocktail_card): ?>
-            <?php foreach ($cocktail_card as $key => $value): ?>
-                <div class="menu-block col-md-4 col-sm-6 col-xs-12">
-                    <div class="inner-box">
-                        <div class="info clearfix">
-                            <div class="pull-left">
-                                <h3><a href=""><?php echo $value['name'] ?></a></h3> </div>
-                            <div class="pull-right">
-                                <div class="price">$<?php echo $value['price'] ?></div>
+                <?php foreach ($cocktail_card as $key => $value): ?>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <h3 style="padding: 15px; background: #fff; color: #902d2e; margin-bottom: 30px;"><?php echo $key ?></h3>
+                    </div>
+                    <?php if ($value != null): ?>
+                        <?php foreach ($value as $k => $val): ?>
+                            <div class="menu-block col-md-4 col-sm-6 col-xs-12">
+                                <div class="inner-box">
+                                    <div class="info clearfix">
+                                        <div class="pull-left">
+                                            <h3><a href=""><?php echo $val['name'] ?></a></h3> </div>
+                                        <div class="pull-right">
+                                            <div class="price">$<?php echo $val['price'] ?></div>
+                                        </div>
+                                    </div>
+                                    <div class="text"><?php echo $val['description'] ?></div>
+                                </div>
+                            </div>
+                        <?php endforeach ?>
+                    <?php else: ?>
+                        <div class="menu-block col-md-4 col-sm-6 col-xs-12">
+                            <div class="inner-box">
+                                NaN:NaN
                             </div>
                         </div>
-                        <div class="text"><?php echo $value['description'] ?></div>
-                    </div>
-                </div>
-            <?php endforeach ?>
+                    <?php endif ?>
+                <?php endforeach ?>
             <?php endif ?>
         </div>
     </div>

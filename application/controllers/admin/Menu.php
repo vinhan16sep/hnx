@@ -55,6 +55,11 @@ class Menu extends Admin_Controller{
 	public function create(){
 		$this->load->helper('form');
 		$this->load->library('form_validation');
+
+        $this->load->model('category_model');
+        $category = $this->category_model->get_all();
+        $this->data['category'] = $this->convert_dropdown($category);
+
 		$this->form_validation->set_rules('name-en', 'Name', 'required');
 		$this->form_validation->set_rules('name-hu', 'Név', 'required');
 		if($this->input->post()){
@@ -70,6 +75,8 @@ class Menu extends Admin_Controller{
                 $image_list = $this->upload_file('./assets/upload/menu/'.$unique_slug_en, 'image_list');
 				$image = json_encode($image_list);
 				$data = array(
+                        'category_id' => $this->input->post('category'),
+                        'store' => $this->input->post('store'),
                         'image' => $image,
                         'price' => $this->input->post('price'),
                         'type' => $this->input->post('type'),
@@ -111,6 +118,10 @@ class Menu extends Admin_Controller{
 
 
 	public function edit($id){
+        $this->load->model('category_model');
+        $category = $this->category_model->get_all();
+        $this->data['category'] = $this->convert_dropdown($category);
+
 		$menu = $this->menu_model->get_by_id($id);
         if(!$menu){
             redirect('admin/menu/index','refresh');
@@ -130,6 +141,7 @@ class Menu extends Admin_Controller{
 
         $menu['image'] = json_decode($menu['image']);
 		$this->data['menu'] = $menu;
+
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 
@@ -149,6 +161,8 @@ class Menu extends Admin_Controller{
                 $image = $this->upload_file('./assets/upload/menu/'.$unique_slug_en, 'image_list');
 
 				$data = array(
+                        'category_id' => $this->input->post('category'),
+                        'store' => $this->input->post('store'),
                         'price' => $this->input->post('price'),
                         'type' => $this->input->post('type'),
                         'created_at'    => $this->author_info['created'],
@@ -256,5 +270,17 @@ class Menu extends Admin_Controller{
         }
         
         $this->output->set_status_header(200)->set_output(json_encode(array('isExists' => $isExists)));
+    }
+
+
+    protected function convert_dropdown($category){
+        $dropdown = array();
+        if(!empty($category)){
+            foreach ($category as $key => $value) {
+                $dropdown[$value['id']] = $value['name']; 
+            }
+        }
+
+        return $dropdown;
     }
 }

@@ -87,6 +87,22 @@
 
                     <div class="form-group col-md-12">
                         <?php
+                        echo form_label('Category (Kategória)', 'category');
+                        echo form_error('category');
+                        echo form_dropdown('category', set_value('category', $category, true), $menu['category_id'], 'class="form-control"')
+                        ?>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <?php
+                        echo form_label('Store', 'store');
+                        echo form_error('store');
+                        echo form_dropdown('store', set_value('store', array(1 => 'Base 1 (Bázis 1)', 2 => 'Base 2 (Bázis 2)'), false), $menu['store'], 'class="form-control"')
+                        ?>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <?php
                         echo form_label('Price (Ár)', 'price');
                         echo form_error('price');
                         echo form_input('price', set_value('price', $menu['price'], false), 'class="form-control" rows="5" ')
