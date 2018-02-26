@@ -12,11 +12,11 @@
             <h2><?php echo $this->lang->line('menu') ?></h2>
             <ul class="list-inline">
                 <li>
-                    <a href="#">Hànội Xưa Nagyvárad tér</a>
+                    <a href="<?php echo base_url('menu') ?>">Hànội Xưa Nagyvárad tér</a>
                 </li>
                 <li> | </li>
                 <li>
-                    <a href="#">Hànội Xưa Kálvin</a>
+                    <a href="<?php echo base_url('menu/store_2') ?>">Hànội Xưa Kálvin</a>
                 </li>
             </ul>
         </div>
@@ -49,7 +49,7 @@
                 <?php else: ?>
                     <div class="menu-block col-md-4 col-sm-6 col-xs-12">
                         <div class="inner-box">
-                            NaN:NaN
+                            No Item Found
                         </div>
                     </div>
                 <?php endif ?>
