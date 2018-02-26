@@ -110,6 +110,10 @@
                                             $url_en = base_url() . 'en/' . 'menu';
                                             $url_hu = base_url() . 'hu/' . 'menu';
                                             break;
+                                        case 'store_2':
+                                            $url_en = base_url() . 'en/' . 'menu/store_2';
+                                            $url_hu = base_url() . 'hu/' . 'menu/store_2';
+                                            break;
                                         case 'contact':
                                         $url_en = base_url() . 'en/' . 'contact';
                                         $url_hu = base_url() . 'hu/' . 'contact';

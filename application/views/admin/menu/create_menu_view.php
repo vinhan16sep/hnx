@@ -83,7 +83,7 @@
                         <?php
                         echo form_label('Store', 'store');
                         echo form_error('store');
-                        echo form_dropdown('store', set_value('store', array(1 => 'Base 1 (Bázis 1)', 2 => 'Base 2 (Bázis 2)'), false), 0, 'class="form-control"')
+                        echo form_dropdown('store', set_value('store', array(1 => 'Hànội Xưa Nagyvárad tér', 2 => 'Hànội Xưa Kálvin)'), false), 0, 'class="form-control"')
                         ?>
                     </div>
 
