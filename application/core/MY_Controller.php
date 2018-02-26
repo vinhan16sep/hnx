@@ -194,6 +194,7 @@ class Public_Controller extends MY_Controller {
             $this->session->set_userdata("langAbbreviation",'hu');
             $this->lang->load('hungarian_lang', 'hungarian');
         }
+
         
     }
 
