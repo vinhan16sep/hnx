@@ -202,6 +202,12 @@
 		wow.init();
 	}
 
+	//Active nav
+
+	$('header .navigation li').click(function(){
+		$(this).removeClass('current');
+	});
+
 /* ==========================================================================
    When document is Scrollig, do
    ========================================================================== */

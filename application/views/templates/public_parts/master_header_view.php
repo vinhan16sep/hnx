@@ -64,24 +64,25 @@
                                         <span class="icon-bar"></span>
                                     </button>
                                 </div>
+
                                 <div class="navbar-collapse collapse clearfix">
                                     <ul class="navigation clearfix">
-                                        <li class="current">
+                                        <li class="<?php echo ($current_link == 'homepage') ? 'current' : '' ; ?>">
                                             <a href="<?php echo base_url('homepage') ?>"><?php echo $this->lang->line('homepage') ?></a>
                                         </li>
-                                        <li>
+                                        <li class="<?php echo ($current_link == 'about')? 'current' : '' ; ?>">
                                             <a href="<?php echo base_url('about') ?>"><?php echo $this->lang->line('about_us') ?></a>
                                         </li>
                                         <!-- <li>
                                             <a href="<?php echo base_url('reservation') ?>"><?php echo $this->lang->line('reservation') ?></a>
                                         </li> -->
-                                        <li>
+                                        <li class="<?php echo ($current_link == 'menu')? 'current' : '' ; ?>">
                                             <a href="<?php echo base_url('menu') ?>"><?php echo $this->lang->line('menu') ?></a>
                                         </li>
-                                        <li>
+                                        <li class="<?php echo ($current_link == 'list_information')? 'current' : '' ; ?>">
                                             <a href="<?php echo base_url('blog/list_information') ?>"><?php echo $this->lang->line('blog') ?></a>
                                         </li>
-                                        <li><a href="<?php echo base_url('contact') ?>"><?php echo $this->lang->line('contact') ?></a></li>
+                                        <li class="<?php echo ($current_link == 'contact')? 'current' : '' ; ?>"><a href="<?php echo base_url('contact') ?>"><?php echo $this->lang->line('contact') ?></a></li>
                                     </ul>
                                 </div>
                             </nav>

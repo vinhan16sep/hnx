@@ -32,7 +32,7 @@ class Homepage extends Public_Controller {
         $this->data['main_menu'] = $main_menu;
 
         // print_r($menu_image_icon);die;
-        $this->data['current_link'] = '';
+        $this->data['current_link'] = 'homepage';
         $this->render('homepage_view');
     }
 }
