@@ -45,7 +45,7 @@
                             echo form_error('message');
                             echo form_textarea('message', set_value('message'), 'class="form-group message"');
 
-                            echo form_button('button', 'SEND MESSAGE', 'class="theme-btn btn-style-two" id="btn-contact"');
+                            echo form_button('button', $this->lang->line('send_message'), 'class="theme-btn btn-style-two" id="btn-contact"');
                     echo form_close();
                     ?>
                 </div>

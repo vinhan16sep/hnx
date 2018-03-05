@@ -42,7 +42,7 @@ font-family: 'Italianno', cursive;*/
 /*Font*/
 
 @font-face {
-	font-family: 'Patua One', cursive;
+	font-family: 'Montserrat', sans-serif;
 }
 
 /***
@@ -84,7 +84,7 @@ body {
 	background-repeat:no-repeat;
 	background-position:center top;
 	-webkit-font-smoothing: antialiased;
-	font-family: 'Patua One', cursive;
+	font-family: 'Montserrat', sans-serif;
 }
 
 a{
@@ -108,7 +108,7 @@ h1,h2,h3,h4,h5,h6 {
 	margin:0px;
 	background:none;
 	line-height:1.4em;
-	font-family: 'Patua One', cursive;
+	font-family: 'Montserrat', sans-serif;
 }
 
 .no-padding{

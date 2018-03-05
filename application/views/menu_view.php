@@ -7,7 +7,7 @@
 <section class="menu-section">
 
     <div class="auto-container">
-
+        <!--
         <div class="sec-title centered">
             <h2><?php echo $this->lang->line('menu') ?></h2>
             <ul class="list-inline">
@@ -20,10 +20,20 @@
                 </li>
             </ul>
         </div>
+        -->
 
         <div class="sec-title centered">
-            <div class="title"><?php echo $this->lang->line('always_delicious') ?></div>
-            <h2><?php echo $this->lang->line('main_menu') ?></h2>
+            <!--<div class="title"><?php echo $this->lang->line('always_delicious') ?></div>-->
+            <h2><?php echo $this->lang->line('menu') ?></h2>
+            <ul class="list-inline">
+                <li>
+                    <a href="<?php echo base_url('menu') ?>">Hànội Xưa Nagyvárad tér</a>
+                </li>
+                <li> | </li>
+                <li>
+                    <a href="<?php echo base_url('menu/store_2') ?>">Hànội Xưa Kálvin</a>
+                </li>
+            </ul>
         </div>
         <div class="row clearfix">
             <?php if ($main_menu): ?>

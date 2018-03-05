@@ -21,7 +21,10 @@
                     <div class="title"><?php echo $this->lang->line('always_delicious') ?></div>
                     <h2><?php echo $this->lang->line('get_the_best') ?></h2> </div>
                 <div class="text">
-                    <?php echo $this->lang->line('get_the_best_text') ?>
+                    <p><b><?php echo $this->lang->line('get_the_best_text_1') ?></b></p>
+                    <p><b><?php echo $this->lang->line('get_the_best_text_2') ?></b></p>
+                    <p><?php echo $this->lang->line('get_the_best_text_3') ?></p>
+                    <p><b><?php echo $this->lang->line('get_the_best_text_4') ?></b></p>
                 </div>
                 <!--<div class="text-center"> <a href="#" class="theme-btn btn-style-four"><?php echo $this->lang->line('find_a_table') ?></a> </div>-->
             </div>
@@ -36,7 +39,12 @@
             <div class="slide"> <img src="<?php echo site_url('assets/public/img/resource/slide-2.jpg')?>" alt="" /> </div>
         </div>
     </div>
+    <br>
+    <br>
+    <br>
+
 </section>
+<!--
 <section class="unique-section">
     <div class="auto-container">
         <div class="row clearfix">
@@ -55,6 +63,7 @@
         </div>
     </div>
 </section>
+-->
 <section class="place-section" style="background-image:url('<?php echo site_url('assets/public/img/background/7.jpg')?>');">
     <div class="auto-container">
         <div class="row clearfix">
@@ -70,6 +79,8 @@
         </div>
     </div>
 </section>
+
+<!--
 <section class="team-section">
     <div class="auto-container">
         <div class="sec-title centered">
@@ -95,3 +106,4 @@
         </div>
     </div>
 </section>
+-->

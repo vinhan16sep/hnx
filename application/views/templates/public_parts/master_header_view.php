@@ -34,7 +34,7 @@
     <link href="<?php echo site_url('assets/public/css/responsive.css')?>" rel="stylesheet" />
 
     <!--Fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Patua+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
 </head>
 
@@ -79,9 +79,11 @@
                                         <li class="<?php echo ($current_link == 'menu')? 'current' : '' ; ?>">
                                             <a href="<?php echo base_url('menu') ?>"><?php echo $this->lang->line('menu') ?></a>
                                         </li>
+                                        <!--
                                         <li class="<?php echo ($current_link == 'list_information')? 'current' : '' ; ?>">
                                             <a href="<?php echo base_url('blog/list_information') ?>"><?php echo $this->lang->line('blog') ?></a>
                                         </li>
+                                        -->
                                         <li class="<?php echo ($current_link == 'contact')? 'current' : '' ; ?>"><a href="<?php echo base_url('contact') ?>"><?php echo $this->lang->line('contact') ?></a></li>
                                     </ul>
                                 </div>
@@ -181,9 +183,11 @@
                                 <li>
                                     <a href="<?php echo base_url('menu') ?>"><?php echo $this->lang->line('menu') ?></a>
                                 </li>
+                                <!--
                                 <li>
                                     <a href="<?php echo base_url('blog/list_information') ?>"><?php echo $this->lang->line('blog') ?></a>
                                 </li>
+                                -->
                                 <li><a href="<?php echo base_url('contact') ?>"><?php echo $this->lang->line('contact') ?></a></li>
                             </ul>
 
