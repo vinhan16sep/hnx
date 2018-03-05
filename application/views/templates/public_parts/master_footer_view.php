@@ -42,7 +42,7 @@
             <div class="column col-md-4 col-sm-6 col-xs-12">
                 <h3><?php echo $this->lang->line('footer_hours') ?></h3>
                 <div class="text">
-                    <strong>Hànội Xưa Nagyvarad Ter</strong>
+                    <strong>Hànội Xưa Nagyvárad tér</strong>
                     <br /><?php echo $this->lang->line('footer_hours_1') ?>
                     <br />
                     <strong>Hànội Xưa Kálvin</strong>
