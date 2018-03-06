@@ -97,7 +97,7 @@
                     <?php else: ?>
                         <div class="menu-block col-md-4 col-sm-6 col-xs-12">
                             <div class="inner-box">
-                                NaN:NaN
+                                No Item Found
                             </div>
                         </div>
                     <?php endif ?>

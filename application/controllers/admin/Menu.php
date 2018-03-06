@@ -9,15 +9,28 @@ class Menu extends Admin_Controller{
 		$this->load->model('menu_model');
 	}
 	public function index(){
+        $this->load->helper('form');
+        $this->load->library('form_validation');
 		$keywords = '';
+        $store = '';
         if($this->input->get('search')){
             $keywords = $this->input->get('search');
         }
-        $total_rows  = $this->menu_model->count_search();
-        if($keywords != ''){
-            $total_rows  = $this->menu_model->count_search($keywords);
+        if($this->input->get('search_store')){
+            $store = $this->input->get('search_store');
         }
-
+        $total_rows  = $this->menu_model->count_search_store();
+        if($keywords != ''){
+            $total_rows  = $this->menu_model->count_search_store('',$keywords);
+        }
+        if($store != ''){
+            $total_rows  = $this->menu_model->count_search_store($store);
+        }
+        if($keywords != '' && $store != ''){
+            $total_rows  = $this->menu_model->count_search_store($store, $keywords);
+        }
+        $this->data['keywords'] = $keywords;
+        $this->data['store'] = $store;
 		$this->load->library('pagination');
 		$config = array();
 		$base_url = base_url('admin/menu/index');
@@ -31,9 +44,15 @@ class Menu extends Admin_Controller{
         $this->data['page_links'] = $this->pagination->create_links();
         $this->data['page'] = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
 
-        $result = $this->menu_model->get_all_with_pagination_search($per_page, $this->data['page']);
+        $result = $this->menu_model->get_all_with_pagination_search_store($per_page, $this->data['page']);
         if($keywords != ''){
-            $result = $this->menu_model->get_all_with_pagination_search($per_page, $this->data['page'], $keywords);
+            $result = $this->menu_model->get_all_with_pagination_search_store($per_page, $this->data['page'], $keywords);
+        }
+        if($store != ''){
+            $result = $this->menu_model->get_all_with_pagination_search_store($per_page, $this->data['page'], '', $store);
+        }
+        if($keywords != '' && $store != ''){
+            $result = $this->menu_model->get_all_with_pagination_search_store($per_page, $this->data['page'], $keywords, $store);
         }
         $output = array();
         foreach($result as $key => $value){
@@ -79,7 +98,7 @@ class Menu extends Admin_Controller{
                         'store' => $this->input->post('store'),
                         'image' => $image,
                         'price' => $this->input->post('price'),
-                        'type' => $this->input->post('type'),
+                        
                         'created_at'    => $this->author_info['created'],
                         'created_by'    => $this->author_info['created_by'],
                         'modified_at'   => $this->author_info['modified'],
@@ -282,5 +301,15 @@ class Menu extends Admin_Controller{
         }
 
         return $dropdown;
+    }
+
+    public function update_store(){
+        $id = $this->input->get('id');
+        $store = $this->input->get('store');
+        $isExists = false;
+        $where = array('store' => $store);
+        if($this->menu_model->update($id, $where) == true){
+            $isExists = true;
+        }
     }
 }

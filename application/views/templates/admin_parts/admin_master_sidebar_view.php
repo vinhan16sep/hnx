@@ -43,16 +43,16 @@
                 <i class="fa fa-address-book"></i> <span>About</span>
             </a>
         </li>
+        <li class="<?php echo ($this->uri->segment(2) == 'category')? 'active' : ''; ?>">
+            <a href="<?php echo base_url('admin/category'); ?>">
+                <i class="fa fa-filter"></i> <span>Category</span>
+            </a>
+        </li>
         <li class="<?php echo ($this->uri->segment(2) == 'menu')? 'active' : ''; ?>">
             <a href="<?php echo base_url('admin/menu'); ?>">
                 <i class="fa fa-book"></i> <span>Menu</span>
             </a>
         </li>
-          <li class="<?php echo ($this->uri->segment(2) == 'category')? 'active' : ''; ?>">
-              <a href="<?php echo base_url('admin/category'); ?>">
-                  <i class="fa fa-filter"></i> <span>Category</span>
-              </a>
-          </li>
 
 
       </ul>

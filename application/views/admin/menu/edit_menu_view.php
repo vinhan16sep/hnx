@@ -97,7 +97,7 @@
                         <?php
                         echo form_label('Store', 'store');
                         echo form_error('store');
-                        echo form_dropdown('store', set_value('store', array(1 => 'Hànội Xưa Nagyvárad tér', 2 => 'Hànội Xưa Kálvin)'), false), $menu['store'], 'class="form-control"')
+                        echo form_dropdown('store', set_value('store', array(1 => 'Hànội Xưa Nagyvárad tér', 2 => 'Hànội Xưa Kálvin', 3 => 'Both Stores (Mindkét üzlet)'), false), $menu['store'], 'class="form-control"')
                         ?>
                     </div>
 
@@ -109,13 +109,13 @@
                         ?>
                     </div>
 
-                    <div class="form-group col-md-12">
+                    <!-- <div class="form-group col-md-12">
                         <?php
                         echo form_label('Type', 'type');
                         echo form_error('type');
                         echo form_dropdown('type', set_value('type', array(0 => 'Food (Élelmiszer)', 1 => 'Drink (Ital)'), $menu['type']), 0, 'class="form-control"')
                         ?>
-                    </div>
+                    </div> -->
                     <div class="form-group col-sm-12 text-right">
                         <?php
                         echo form_submit('submit', 'OK', 'class="btn btn-primary"');

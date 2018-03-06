@@ -26,12 +26,14 @@
                     <?php if ($category): ?>
                         <table class="table table-hover table-bordered table-condensed">
                             <tr>
-                                <td width="70%"><b><a href="#">Name</a></b></td>
+                                <td width="40%"><b><a href="#">Name</a></b></td>
+                                <td width="30%"><b><a href="#">Type</a></b></td>
                                 <td width="30%"><b>Operations</b></td>
                             </tr>
                             <?php foreach ($category as $key => $value): ?>
                                 <tr>
                                     <td><?php echo $value['data']['category_name'] ?></td>
+                                    <td><?php echo ($value['data']['type'] == 0)? 'Food' : 'Drink' ?></td>
                                     <td>
                                         <a href="<?php echo base_url('admin/category/edit/'.$value['id']) ?>" title="Edit" class="btn-edit" data-id="<?php echo $value['id'] ?>" >
                                             <i class="fa fa-edit" aria-hidden="true"></i>

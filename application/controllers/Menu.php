@@ -14,6 +14,7 @@ class Menu extends Public_Controller {
     }
 
     public function index(){
+        $this->output->enable_profiler(TRUE);
     	// $this->load->library('pagination');
      //    $base_url = base_url() . 'menu';
      //    $total_rows = $this->menu_model->count_all_for_list_admin();
@@ -26,17 +27,19 @@ class Menu extends Public_Controller {
      //    $this->data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 
         $this->load->model('category_model');
-        $category = $this->category_model->get_all();
-        $category = $this->convert_dropdown($category);
+        $category_main_menu = $this->category_model->get_by_type(0);
+        $category_cocktail_card = $this->category_model->get_by_type(1);
+        $category_main_menu = $this->convert_dropdown($category_main_menu);
+        $category_cocktail_card = $this->convert_dropdown($category_cocktail_card);
         $main_menu = array();
         $cocktail_card = array();
-        foreach ($category as $key => $value) {
-            $main_menu[$value] = $this->menu_model->get_latest_article($this->data['lang'], 0, 0, $key, 1);
+        foreach ($category_main_menu as $key => $value) {
+            $main_menu[$value] = $this->menu_model->get_latest_article($this->data['lang'], 0, $key, 1);
         }
         $this->data['main_menu'] = $main_menu;
 
-        foreach ($category as $key => $value) {
-            $cocktail_card[$value] = $this->menu_model->get_latest_article($this->data['lang'], 0, 1, $key, 1);
+        foreach ($category_cocktail_card as $key => $value) {
+            $cocktail_card[$value] = $this->menu_model->get_latest_article($this->data['lang'], 0, $key, 1);
         }
         $this->data['cocktail_card'] = $cocktail_card;
 
@@ -46,7 +49,6 @@ class Menu extends Public_Controller {
         	$images = json_decode($value['image']);
         	$special[$key]['image'] = $images[0];
         }
-        // print_r($special);die;
         $this->data['special'] = $special;
         $this->data['current_link'] = 'menu';
 
@@ -54,29 +56,21 @@ class Menu extends Public_Controller {
     }
 
     public function store_2(){
-        // $this->load->library('pagination');
-     //    $base_url = base_url() . 'menu';
-     //    $total_rows = $this->menu_model->count_all_for_list_admin();
-     //    $per_page = 10;
-     //    $uri_segment = 3;
-     //    $config = $this->pagination_config($base_url, $total_rows, $per_page, $uri_segment);
-     //    $this->pagination->initialize($config);
-
-     //    $this->data['page_links'] = $this->pagination->create_links();
-     //    $this->data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 
         $this->load->model('category_model');
-        $category = $this->category_model->get_all();
-        $category = $this->convert_dropdown($category);
+        $category_main_menu = $this->category_model->get_by_type(0);
+        $category_cocktail_card = $this->category_model->get_by_type(1);
+        $category_main_menu = $this->convert_dropdown($category_main_menu);
+        $category_cocktail_card = $this->convert_dropdown($category_cocktail_card);
         $main_menu = array();
         $cocktail_card = array();
-        foreach ($category as $key => $value) {
-            $main_menu[$value] = $this->menu_model->get_latest_article($this->data['lang'], 0, 0, $key, 2);
+        foreach ($category_main_menu as $key => $value) {
+            $main_menu[$value] = $this->menu_model->get_latest_article($this->data['lang'], 0, $key, 2);
         }
         $this->data['main_menu'] = $main_menu;
 
-        foreach ($category as $key => $value) {
-            $cocktail_card[$value] = $this->menu_model->get_latest_article($this->data['lang'], 0, 1, $key, 2);
+        foreach ($category_cocktail_card as $key => $value) {
+            $cocktail_card[$value] = $this->menu_model->get_latest_article($this->data['lang'], 0, $key, 2);
         }
         $this->data['cocktail_card'] = $cocktail_card;
 
@@ -86,7 +80,6 @@ class Menu extends Public_Controller {
             $images = json_decode($value['image']);
             $special[$key]['image'] = $images[0];
         }
-        // print_r($special);die;
         $this->data['special'] = $special;
         $this->data['current_link'] = 'store_2';
 
