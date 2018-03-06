@@ -41,8 +41,7 @@ class Category extends Admin_Controller{
             $output[$key]['data'] = $this->category_model->get_by_id($value['id']);
         }
         $this->data['category'] = $output;
-        // print_r($output);die;
-
+        // print_r($this->data['page_links']);die;
 
 		$this->render('admin/category/list_category_view');
 	}
@@ -60,6 +59,7 @@ class Category extends Admin_Controller{
                 $unique_slug_en = $this->category_model->build_unique_slug($slug_en, 'en');
                 $unique_slug_hu = $this->category_model->build_unique_slug($slug_hu, 'hu');
 				$data = array(
+                        'type' => $this->input->post('type'),
                         'created_at'    => $this->author_info['created'],
                         'created_by'    => $this->author_info['created_by'],
                         'updated_at'   => $this->author_info['modified'],

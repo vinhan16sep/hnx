@@ -155,7 +155,20 @@ class Category_model extends CI_Model{
         $this->db->join('category_lang', 'category_lang.category_id = category.id');
         $this->db->where('category.is_deleted', 0);
         $this->db->group_by('category_lang.category_id');
-        $this->db->order_by("category.id", "desc");
+        $this->db->order_by("category.id", "asc");
+
+        return $result = $this->db->get()->result_array();
+    }
+
+    public function get_by_type($type = '') {
+        $this->db->select('category.id, category_lang.name');
+        $this->db->from('category');
+        $this->db->join('category_lang', 'category_lang.category_id = category.id');
+        $this->db->where('category.is_deleted', 0);
+        $this->db->where('type', $type);
+        
+        $this->db->group_by('category_lang.category_id');
+        $this->db->order_by("category.id", "asc");
 
         return $result = $this->db->get()->result_array();
     }

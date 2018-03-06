@@ -150,6 +150,43 @@ class Menu_model extends CI_Model{
         return $temp_slug;
     }
 
+    public function count_search_store($store = '', $keyword = ''){
+        $this->db->select('*');
+        $this->db->from('menu');
+        $this->db->join('menu_lang', 'menu_lang.menu_id = menu.id');
+        $this->db->like('menu_lang.name', $keyword);
+        $this->db->group_by('menu_lang.menu_id');
+        $this->db->where('menu.is_deleted', 0);
+        if($store != ''){
+            $this->db->group_start();
+            $this->db->where('menu.store', $store);
+            $this->db->or_where('menu.store', 3);
+            $this->db->group_end();
+        }
+        
+
+        return $result = $this->db->get()->num_rows();
+    }
+
+    public function get_all_with_pagination_search_store($limit = NULL, $start = NULL, $keywords = '', $store = '') {
+        $this->db->select('menu.*');
+        $this->db->from('menu');
+        $this->db->join('menu_lang', 'menu_lang.menu_id = menu.id');
+        $this->db->like('menu_lang.name', $keywords);
+        $this->db->where('menu.is_deleted', 0);
+        $this->db->limit($limit, $start);
+        if($store != ''){
+            $this->db->group_start();
+            $this->db->where('menu.store', $store);
+            $this->db->or_where('menu.store', 3);
+            $this->db->group_end();
+        }
+        $this->db->group_by('menu_lang.menu_id');
+        $this->db->order_by("menu.id", "desc");
+
+        return $result = $this->db->get()->result_array();
+    }
+
     /**
      *
      * model for frontend
@@ -168,14 +205,17 @@ class Menu_model extends CI_Model{
             $this->db->where('menu.status', $status);
         }
         $this->db->where('menu.is_deleted', 0);
+        $this->db->group_start();
         $this->db->where('menu.store', $store);
+        $this->db->or_where('menu.store', 3);
+        $this->db->group_end();
         $this->db->limit($limit, $start);
         $this->db->order_by("menu.id", "desc");
 
         return $result = $this->db->get()->result_array();
     }
 
-    public function get_latest_article($lang, $status = null, $type = 0, $category = null, $store = 1){
+    public function get_latest_article($lang, $status = null, $category = null, $store = 1){
         $this->db->select('menu.*, menu.id as menu_id, menu_lang.*, category_lang.name as cate_name');
         $this->db->from('menu');
         $this->db->join('menu_lang', 'menu_lang.menu_id = menu.id');
@@ -186,13 +226,14 @@ class Menu_model extends CI_Model{
         if($status != null){
             $this->db->where('menu.status', $status);
         }
-        $this->db->where('menu.type', $type);
         if($category != null){
             $this->db->where('menu.category_id', $category);
         }
         $this->db->where('menu.is_deleted', 0);
+        $this->db->group_start();
         $this->db->where('menu.store', $store);
-        // $this->db->limit($limit, $start);
+        $this->db->or_where('menu.store', 3);
+        $this->db->group_end();
         $this->db->order_by("menu.id", "desc");
 
         return $result = $this->db->get()->result_array();

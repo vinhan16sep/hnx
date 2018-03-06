@@ -13,7 +13,10 @@
             <div class="row">
                 <form action="<?php echo base_url('admin/menu/index/') ?>" class="form-horizontal col-md-12 col-sm-12 col-xs-12" method="get" style="margin-bottom: 30px;">
 
-                    <input type="text" name="search" value="" placeholder="search..." class="form-control" style=" width: 40%; float: left;margin-right: 5px;">
+                    <input type="text" name="search" value="<?php echo $keywords ?>" placeholder="search..." class="form-control" style=" width: 40%; float: left;margin-right: 5px;">
+                    <?php
+                    echo form_dropdown('search_store', set_value('store', array('' => 'Select one store', 1 => 'Hànội Xưa Nagyvárad tér', 2 => 'Hànội Xưa Kálvin'), true), $store, 'class="form-control" style=" width: 40%; float: left;margin-right: 5px;"')
+                    ?>
                     <input type="submit" name="btn-search" value="Search" class="btn btn-primary" style="float: left">
                 </form>
             </div>
@@ -31,6 +34,7 @@
                                 <td><b><a href="#">Price</a></b></td>
                                 <td><b><a href="#">Type</a></b></td>
                                 <td><b><a href="#">Special</a></b></td>
+                                <td style="width: 20%"><b><a href="#">Store</a></b></td>
                                 <td><b>Operations</b></td>
                             </tr>
                             <?php foreach ($menu as $key => $value): ?>
@@ -44,6 +48,11 @@
                                     <?php else: ?>
                                         <td><button class="btn btn-danger btn-not-active" data-id="<?php echo $value['id'] ?>"  title="Special"><i class="fa fa-times" aria-hidden="true"></i></button></td>
                                     <?php endif ?>
+                                    <td>
+                                        <?php
+                                        echo form_dropdown('store', set_value('store', array(1 => 'Hànội Xưa Nagyvárad tér', 2 => 'Hànội Xưa Kálvin', 3 => 'Both Stores (Mindkét üzlet)'), false),$value['data']['store'], 'class="form-control store_update" data-id="'.$value['id'].'"') 
+                                        ?>
+                                    </td>
                                     <td>
                                         <a href="<?php echo base_url('admin/menu/edit/'.$value['id']) ?>" title="Edit" class="btn-edit" data-id="<?php echo $value['id'] ?>" >
                                             <i class="fa fa-edit" aria-hidden="true"></i>
@@ -123,6 +132,26 @@ $('.btn-is-active').click(function(){
         });
     };
     
+});
+
+$('.store_update').change(function(){
+    var id = $(this).attr('data-id');
+    var store = $(this).val();
+    if(confirm('Change?')){
+        jQuery.ajax({
+            method: "get",
+            url: base_url + '/hnx/admin/menu/update_store',
+            // url: location.protocol + "//" + location.host + (location.port ? ':' + location.port : '') + "/tuoithantien/comment/create_comment",
+            data: {id : id, store:store},
+            success: function(result){
+                if(JSON.parse(result).isExists == true){
+                    alert('success!');
+                }else{
+                    alert('false!');
+                }
+            }
+        });
+    };
 })
 /* end active banner */
 </script>
