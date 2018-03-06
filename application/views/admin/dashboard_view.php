@@ -1,5 +1,5 @@
 <!--main content start-->
-<div class="container" style="min-height: 100%;">
+<div class="container" style="min-height: 900px;">
     <h3>Informations</h3>
     <div class="col-lg-0" style="margin-top: 10px;">
         <table class="table table-hover table-bordered table-condensed">

@@ -38,18 +38,23 @@
             <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
           </ul>
         </li> -->
-
-        <li class="<?php echo ($this->uri->segment(2) == 'menu')? 'active' : ''; ?>">
-          <a href="<?php echo base_url('admin/menu'); ?>">
-            <i class="fa fa-bars"></i> <span>Menu</span>
-          </a>
-        </li>
-
         <li class="<?php echo ($this->uri->segment(2) == 'about')? 'active' : ''; ?>">
-          <a href="<?php echo base_url('admin/about'); ?>">
-            <i class="fa fa-address-book"></i> <span>About</span>
-          </a>
+            <a href="<?php echo base_url('admin/about'); ?>">
+                <i class="fa fa-address-book"></i> <span>About</span>
+            </a>
         </li>
+        <li class="<?php echo ($this->uri->segment(2) == 'menu')? 'active' : ''; ?>">
+            <a href="<?php echo base_url('admin/menu'); ?>">
+                <i class="fa fa-book"></i> <span>Menu</span>
+            </a>
+        </li>
+          <li class="<?php echo ($this->uri->segment(2) == 'category')? 'active' : ''; ?>">
+              <a href="<?php echo base_url('admin/category'); ?>">
+                  <i class="fa fa-filter"></i> <span>Category</span>
+              </a>
+          </li>
+
+
       </ul>
     </section>
     <!-- /.sidebar -->
