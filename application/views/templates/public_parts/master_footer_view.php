@@ -60,6 +60,7 @@
 
 <script src="<?php echo site_url('assets/public/lib/js/jquery.js')?>"></script>
 <script src="<?php echo site_url('assets/public/js/bootstrap.js')?>"></script>
+<!--
 <script src="<?php echo site_url('assets/public/lib/revolution/js/jquery.themepunch.revolution.min.js')?>"></script>
 <script src="<?php echo site_url('assets/public/lib/revolution/js/jquery.themepunch.tools.min.js')?>"></script>
 <script src="<?php echo site_url('assets/public/lib/revolution/js/extensions/revolution.extension.actions.min.js')?>"></script>
@@ -71,17 +72,24 @@
 <script src="<?php echo site_url('assets/public/lib/revolution/js/extensions/revolution.extension.parallax.min.js')?>"></script>
 <script src="<?php echo site_url('assets/public/lib/revolution/js/extensions/revolution.extension.slideanims.min.js')?>"></script>
 <script src="<?php echo site_url('assets/public/lib/revolution/js/extensions/revolution.extension.video.min.js')?>"></script>
+-->
 
+<!--
 <script src="<?php echo site_url('assets/public/lib/js/main-slider-script.js')?>"></script>
+-->
 <script src="<?php echo site_url('assets/public/lib/js/jquery.fancybox.pack.js')?>"></script>
 <script src="<?php echo site_url('assets/public/lib/js/owl.js')?>"></script>
 <script src="<?php echo site_url('assets/public/lib/js/appear.js')?>"></script>
 <script src="<?php echo site_url('assets/public/lib/js/wow.js')?>"></script>
 <script src="<?php echo site_url('assets/public/lib/js/jquery-ui.js')?>"></script>
+<!--
 <script src="<?php echo site_url('assets/public/lib/js/main-slider-script.js')?>"></script>
+-->
 <script src="<?php echo site_url('assets/public/lib/js/script.js')?>"></script>
+<!--
 <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyBf4UvvTN2QLWT4BiewE_3fEzK3QrRsLJE"></script>
 <script src="<?php echo site_url('assets/public/lib/js/map-script.js')?>"></script>
+-->
 
 </body>
 
