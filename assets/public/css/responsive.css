@@ -137,7 +137,9 @@
 	}
 
 	.main-header .nav-outer .more-options{
-		display:none;
+		/*display:none;*/
+		margin-top: 15px;
+		margin-bottom: 15px;
 	}
 
 	.main-menu .navigation > li{
@@ -448,7 +450,9 @@
 	}
 
 	.main-header .nav-outer .more-options{
-		display:none;
+		/*display:none;*/
+		margin-top: 10px;
+		margin-bottom: 10px;
 	}
 
 	.main-header .header-upper .upper-right{

@@ -35,7 +35,7 @@ $lang['blog_most_viewed'] = 'Most viewed';
 
 // Footer
 $lang['footer_hours'] = 'NYITVATARTÁS';
-$lang['footer_hours_1'] = 'Hétfő - Vasárnap: 11:00-21:30';
+$lang['footer_hours_1'] = 'Hétfő - Szombat: 11:00-21:30; Vasárnap: 11:00-21:00';
 $lang['footer_hours_2'] = 'Hétfő - Szombat: 11:00-21:30';
 $lang['company'] = 'Company';
 $lang['history'] = 'History';
