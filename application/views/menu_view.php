@@ -58,7 +58,7 @@
                                     <div class="pull-left">
                                         <h3><a href=""><?php echo $val['name'] ?></a></h3> </div>
                                     <div class="pull-right">
-                                        <div class="price">$<?php echo $val['price'] ?></div>
+                                        <div class="price"><?php echo $val['price'] ?>,-</div>
                                     </div>
                                 </div>
                                 <div class="text"><?php echo $val['description'] ?></div>
@@ -96,7 +96,7 @@
                                         <div class="pull-left">
                                             <h3><a href=""><?php echo $val['name'] ?></a></h3> </div>
                                         <div class="pull-right">
-                                            <div class="price">$<?php echo $val['price'] ?></div>
+                                            <div class="price"><?php echo $val['price'] ?>,-</div>
                                         </div>
                                     </div>
                                     <div class="text"><?php echo $val['description'] ?></div>
@@ -133,7 +133,7 @@
                                 <div class="pull-left">
                                     <h3><a href="#"><?php echo $value['name'] ?></a></h3> </div>
                                 <div class="pull-right">
-                                    <div class="price">$<?php echo $value['price'] ?></div>
+                                    <div class="price"><?php echo $value['price'] ?>,-</div>
                                 </div>
                             </div>
                             <div class="text"><?php echo $value['description'] ?></div>
