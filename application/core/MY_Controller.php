@@ -4,7 +4,7 @@ class MY_Controller extends CI_Controller {
 
     protected $data = array();
     protected $author_info = array();
-    protected $langAbbreviation = 'en';
+    protected $langAbbreviation = 'hu';
 
     function __construct() {
         parent::__construct();
@@ -176,7 +176,7 @@ class Public_Controller extends MY_Controller {
         $this->load->library('session');
         $this->load->helper('form');
         
-        $this->langAbbreviation = $this->uri->segment(1) ? $this->uri->segment(1) : 'en';
+        $this->langAbbreviation = $this->uri->segment(1) ? $this->uri->segment(1) : 'hu';
         if($this->langAbbreviation == 'en' || $this->langAbbreviation == 'hu' || $this->langAbbreviation == ''){
             $this->session->set_userdata('langAbbreviation', $this->langAbbreviation);
         }

@@ -85,6 +85,7 @@
                                         </li>
                                         -->
                                         <li class="<?php echo ($current_link == 'contact')? 'current' : '' ; ?>"><a href="<?php echo base_url('contact') ?>"><?php echo $this->lang->line('contact') ?></a></li>
+<!--                                        <li><a href="--><?php //echo $url_en; ?><!--">En</a> | <a href="--><?php //echo $url_hu; ?><!--">Hu</a></li>-->
                                     </ul>
                                 </div>
                             </nav>

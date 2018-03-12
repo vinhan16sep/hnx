@@ -34,7 +34,7 @@ $lang['blog_most_viewed'] = 'Most viewed';
 
 // Footer
 $lang['footer_hours'] = 'hours';
-$lang['footer_hours_1'] = 'Monday - Sunday : 11am-9.30pm';
+$lang['footer_hours_1'] = 'Monday - Saturday : 11am-9.30pm; Sunday: 11am-9pm';
 $lang['footer_hours_2'] = 'Monday - Saturday : 11am-9.30pm';
 $lang['company'] = 'Company';
 $lang['history'] = 'History';
