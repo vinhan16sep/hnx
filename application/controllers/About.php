@@ -17,6 +17,6 @@ class About extends Public_Controller {
     	$this->data['current_link'] = 'about';
     	$about = $this->about_model->get_latest_article($this->data['lang']);
     	$this->data['abouts'] = $about;
-        $this->render('About_view');
+        $this->render('about_view');
     }
 }

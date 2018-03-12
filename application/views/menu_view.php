@@ -1,4 +1,11 @@
 
+<style>
+    .sec-title > ul.list-inline > li{
+        display: inline-block;
+        padding: 3px 5px;
+    }
+</style>
+
 <section class="page-title" style="background-image:url(<?php echo site_url('assets/public/img/background/menu.jpg')?>);">
     <div class="auto-container">
         <div class="title"><?php echo $this->lang->line('discover_our') ?></div>
@@ -35,6 +42,8 @@
                 </li>
             </ul>
         </div>
+        <h2 class="centered" id="store_name"><?php echo ($this->uri->segment(2) == 'store_2')? 'Hànội Xưa Kálvin' : 'Hànội Xưa Nagyvárad tér' ?></h2>
+        <br>
         <div class="row clearfix">
             <?php if ($main_menu): ?>
             <?php foreach ($main_menu as $key => $value): ?>

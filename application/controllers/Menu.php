@@ -14,7 +14,6 @@ class Menu extends Public_Controller {
     }
 
     public function index(){
-        $this->output->enable_profiler(TRUE);
     	// $this->load->library('pagination');
      //    $base_url = base_url() . 'menu';
      //    $total_rows = $this->menu_model->count_all_for_list_admin();
