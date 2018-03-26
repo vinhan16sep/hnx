@@ -1,35 +1,33 @@
-
 <style>
-	ul.list-inline > li{
-		display: inline-block;
-		padding: 3px 5px;
-	}
+    ul.list-inline > li{
+        display: inline-block;
+        padding: 3px 5px;
+    }
 
-	ul.list-inline{
-		margin-top: 30px;
-		margin-bottom: 50px;
-		text-align: center;
-	}
+    ul.list-inline{
+        margin-top: 30px;
+        margin-bottom: 50px;
+        text-align: center;
+    }
 </style>
 
 <section class="page-title" style="background-image:url(<?php echo site_url('assets/public/img/background/about.jpg')?>);">
     <div class="auto-container">
         <div class="title"><?php echo $this->lang->line('welcome') ?></div>
-        <h2><?php echo $this->lang->line('story') ?></h2>
-
-	</div>
+        <h2><?php echo $this->lang->line('story') ?></h2> </div>
 </section>
 <section class="table-section">
     <div class="auto-container">
-		<ul class="list-inline">
-			<li>
-				<a href="<?php echo base_url('about') ?>">Hànội Xưa Nagyvárad tér</a>
-			</li>
-			<li> | </li>
-			<li>
-				<a href="<?php echo base_url('about/about_2') ?>">Hànội Xưa Kálvin</a>
-			</li>
-		</ul>
+        <ul class="list-inline">
+            <li>
+                <a href="<?php echo base_url('about') ?>">Hànội Xưa Nagyvárad tér</a>
+            </li>
+            <li> | </li>
+            <li>
+                <a href="<?php echo base_url('about/about_2') ?>">Hànội Xưa Kálvin</a>
+            </li>
+        </ul>
+
         <div class="row clearfix">
             <div class="image-column col-md-6 col-sm-12 col-xs-12">
                 <div class="row clearfix">
@@ -96,9 +94,9 @@
             <div class="content-column col-md-6 col-sm-12 col-xs-12">
                 <div class="content-inner">
                     <h2><?php echo $this->lang->line('the_place') ?></h2>
-					<h1 style="color: #fff; font-size: 2em;">Erno</h1>
+                    <h1 style="color: #fff; font-size: 2em;">Kalvin</h1>
                     <div class="text">
-                        <?php echo $this->lang->line('the_place_text_1') ?>
+                        <?php echo $this->lang->line('the_place_text_2') ?>
                     </div>
                 </div>
             </div>

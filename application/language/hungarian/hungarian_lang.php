@@ -72,7 +72,7 @@ $lang['discover_our'] = 'ÜDVÖZÖLJÜK';
 $lang['restaurant'] = 'AUTENTIKUS VIETNÁMI ÉTTEREM';
 $lang['unique_story'] = 'Hanoixua története';
 $lang['since'] = 'Mivel';
-$lang['alen_remsi'] = 'Az aeneai lerajzolódás, a lorem quis bibendum auctor, a nisi elit consequat ipsum, a nec sagittis nibhid elit. Duis sed odio sit amet nibh vulpedat kurzus egy ülést amet mauris. Morbi accumsa ipsum velit. Namec tellus adio tincidunt auctor egy ornare hódolt nauris vitae korszak.';
+$lang['intro'] = 'A Hanoi Xua egy ízig-vérig vietnámi étterem, azon belül pedig a hanoi konyha képviselője. Az étlap náluk igencsak terebélyes, teli hatalmas adagokat takaró, fűszeres-ízletes, tésztás, rizses ételekkel és levesekkel, de persze nem hiányoznak a nyári tekercsés dim sum-fél falatok sem. Az ételek nagy részét lehet tengeri herkentyűkkel vagy épp hús nélkül kérni, kísérőnek licsis limonádét vagy akár rizsvodkát ajánlunk. A Hanoi Xua első, Nagyvárad téri étterme mellett érdemes kipróbálni a Kálvin téri, street food-jellegű kistesót is.';
 $lang['always_delicious'] = 'Mindig friss';
 $lang['main_menu'] = 'Főmenü';
 $lang['enjoy_together'] = 'Vélemények';
@@ -82,7 +82,7 @@ $lang['dress_code'] = 'Kötelező viselet';
 
 /* About */
 $lang['welcome'] = 'Üdvözöljük';
-$lang['story'] = 'SZTORI';
+$lang['story'] = 'TÖRTÉNETÜNK';
 $lang['get_the_best'] = 'Autentikus';
 $lang['get_the_best_text_1'] = 'MIÉRT ÉPPEN HANOI XUA ?';
 $lang['get_the_best_text_2'] = 'HANOI XUA A RÉGIES, HAGYOMÁNYOKKAL NEM SZAKÍTÓ, AUTENTIKUS ÉRTÉKEKET SZERETNÉ MEGŐRIZNI ÉS ÁTADNI MINDAZOKNAK AKIK BETÉRNEK HOZZÁNK';
@@ -93,7 +93,8 @@ $lang['unique'] = 'egyedi';
 $lang['unique_text'] = 'Aéanian sollicitudin, lorem quis bibendum aucsim elit consuat ipsum, nec sagittis nibhid elit. Duis sed odio sit amet nibh vulped ate sus a sit amet mauris. Morbi accumsa ipsum velit. Namec lus adio tincid ant auctor egy ornare elszomorított nauris vitae korszak.';
 $lang['facts'] = 'tények';
 $lang['the_place'] = 'Egy darab Hanoi-ból';
-$lang['the_place_text'] = 'Egyedülálló élmény a Monde ünnepén. Proina nibhel velit auctor aliquet. Az aenei szolíciális udine oremai biben dum auctor, nem elit következménye, sem a nibhad elit. Duis sed odio sit amet nibvupusus amet uris. Morbi felhalmozódott a vitaminokról, amelyek a tündöklődést és az örömöt mutatják.';
+$lang['the_place_text_1'] = 'A megszokott Pho leveseken kívül az igazán ínyencek is találnak kedvükre valót, ugyanis a tavaszi és nyári tekercseket rögtön 12 fajta leves követi, és a 14 féle wokban sült tészta vagy rizs mellett érdemes a mix tésztákat is megemlíteni, melyből 6 féle található az étlapon. Ezt követi a több mint 10 fajta főétel, hogy mindenki megtalálhassa a kedvére valót. Éttermünk alkalmas kisebb társaságok vagy nagyobb céges rendezvények lebonyolítására is. Különleges kérésekkel keressen minket bátran! A Nagyvárad tértől pár percre, az Ernő utcában, a háztömbök szürkeségéből alig észrevehető a hazai Vietnámi konyha egyik oszlopos tagja, a Hanoi Xua. Éttermünk 2016 óta várja vendégeit a méltán híres Pho levesekk';
+$lang['the_place_text_2'] = 'Az Ernő utcai étterem kistestvére 2017 októberében nyitotta meg kapuit az Üllői úton, a Premier Kult Cafe szomszédságában, azzal az indokkal, hogy a Nagyvárad térről már jól ismert finomságokat közelebb hozza a város központjához. Egy aprócska Vietnám a Kálvin tértől két percre. Legyen szó tekercsekről, a híres Pho levesről, wokban sült tésztákról, a Hanoi Xua Kálvin téri egységében minden vietnámi konyha-fanatikus és gasztrokonzervatív is talál kedvére valót. Étlapunkon megtalálhatóak többek között a legfinomabb Pho leveseink, tavaszi tekercsek, rákos batyuk, wokban sült tészták és főételek, különleges szószban készült kacsa, csirke, marha húsokkal vagy tofuval is természetesen. Szeretettel várjuk vendégeinket legyen szó akár egy gyors ebédről, vagy akár egy több fogásból álló ízorgiáról a vietnámi konyha rejtelmeivel.';
 $lang['magical_experience'] = 'mágikus élmény';
 $lang['the_team'] = 'a csapat';
 
