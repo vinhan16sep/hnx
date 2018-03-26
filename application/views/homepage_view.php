@@ -14,9 +14,9 @@
             <h2><?php echo $this->lang->line('unique_story') ?> <br /><?php echo $this->lang->line('since') ?> 2016</h2> </div>
         <div class="content">
             <div class="text">
-                <?php echo $this->lang->line('alen_remsi') ?>
+                <?php echo $this->lang->line('intro') ?>
             </div>
-            <div class="signature">Alen Remsi</div>
+            <!--<div class="signature">Alen Remsi</div>-->
         </div>
     </div>
 </section>
@@ -67,7 +67,7 @@
 <section class="menu-section">
     <div class="auto-container">
         <div class="sec-title centered">
-            <div class="title"><?php echo $this->lang->line('always_delicious') ?></div>
+            <!-- <div class="title"><?php echo $this->lang->line('always_delicious') ?></div> -->
             <h2><?php echo $this->lang->line('main_menu') ?></h2> </div>
         <div class="row clearfix">
         	<?php foreach ($main_menu as $key => $value): ?>
@@ -164,22 +164,58 @@ HIDE THIS SECTION
         <div class="single-item-carousel owl-carousel owl-theme">
             <div class="testimonial-block">
                 <div class="inner-box">
-                    <div class="text">“An experience at the heart of the New York, that give you all the magic that you can imagin. Curab euismod elit ipsum, eu pellen tesque turpis commodo sit amet. Aliquam lacinia, felis ege.”</div>
-                    <div class="author">Michelin Magazine</div>
+                    <div class="text">“Jó vietnami konyhát sok helyen találunk a városban, most viszont egy igazi kulináris kincsesbányára bukkantunk. Mindenkinek kötelező, aki kicsit is kedveli az ázsiai ételeket!"</div>
+                    <div class="author">Nemes Nóra - NOSALTY</div>
                 </div>
             </div>
             <div class="testimonial-block">
                 <div class="inner-box">
-                    <div class="text">“An experience at the heart of the New York, that give you all the magic that you can imagin. Curab euismod elit ipsum, eu pellen tesque turpis commodo sit amet. Aliquam lacinia, felis ege.”</div>
-                    <div class="author">Michelin Magazine</div>
+                    <div class="text">“A Hànội Xưa nem akar nagy felhajtást, ám némileg kilép a teljesen indokolatlan művirágokkal és kedves, ám cikis dekorációkkal operáló ázsiai éttermek világából, és igyekszik jobban odafigyelni a dizájnra. A fekete-fehér képekkel, komolyabb faasztalokkal és rizslámpákkal már tényleg kitűnnek az általunk is szeretett, ám romantikusan lepukkant egységek közül.”</div>
+                    <div class="author">WeloveBudapest</div>
                 </div>
             </div>
             <div class="testimonial-block">
                 <div class="inner-box">
-                    <div class="text">“An experience at the heart of the New York, that give you all the magic that you can imagin. Curab euismod elit ipsum, eu pellen tesque turpis commodo sit amet. Aliquam lacinia, felis ege.”</div>
-                    <div class="author">Michelin Magazine</div>
+                    <div class="text">“Igazi élmény volt Vietnámban lenni! Persze csak átvitt értelemben, de amikor beléptünk a Hanoi Xua étterembe, ott érezhettük magunkat. Az igazi autentikus ételekhez a környezet is abszolút hozzá van igazítva. A faragott asztalok mesélni tudnának az ottani világról, és a falakon kiakasztott - a tulajdonos másik szenvedélyét a (fotózást) hírül adó - képek elénk varázsolják Hanoi utcáit és az ott zajló élet néhány apró rezdülését….. ”</div>
+                    <div class="author">Foodyny</div>
                 </div>
             </div>
+			<div class="testimonial-block">
+				<div class="inner-box">
+					<div class="text">“One of my favorite Vietnamese restaurants in Budapest, which has seen a number of very good new additions in the past year or so. This is one of the better ones, and I like to visit whenever I can..”</div>
+					<div class="author">Mark Haas - Facebook</div>
+				</div>
+			</div>
+			<div class="testimonial-block">
+				<div class="inner-box">
+					<div class="text">“Ahogy a környéken sétáltunk a metróállomástól, elképzelni se nagyon tudtuk, hogy bárhol lehet itt jót enni... Borzasztó nagy a forgalom az Üllőin, fura emberek mindenfelé, nem túl bizalomgerjesztő... aztán sétáltunk kicsit, és balra egy szebb utcácskában találtunk rá a Hànội Xưa vietnámi étteremre.  Bemenekültünk, és ott már nagyon jól éreztük magunkat. Hangulatos, nagy étterem, ahol kényelmesen helyet foglalhatunk és étkezés közben beszélgethetünk egy jót. Kitűnően alkalmas baráti találkozásokhoz. ”</div>
+					<div class="author">FecskeFészek</div>
+				</div>
+			</div>
+			<div class="testimonial-block">
+				<div class="inner-box">
+					<div class="text">“Nagyon hangulatos kialakítása van az étteremnek. Az ételek finoman, ízletesen vannak elkészítve szép tálalással. A felszolgálók rendkívül kedvesek. Ár-érték arányban teljesen megfelelő hely. Nyitott szívvel ajánlom mindenkinek. Biztosan meglátogatom a jövőben. Megérdemli az 5 csillag-ot. ”</div>
+					<div class="author">Nikoletta Laczkó - Facebook</div>
+				</div>
+			</div>
+			<div class="testimonial-block">
+				<div class="inner-box">
+					<div class="text">“Életem legjobb phoja volt az iménti marhás! Gyors, kedves kiszolgálás, tényleg isteni leves, mintha nem is étteremben, hanem otthon készítette volna egy vietnámi szakács/szakácsnő a családjának. Elvitelre kértem, nagyon praktikus csomagolásban és szépen tálalva kaptam- sajnos vacsorára nem fog maradni belőle. Az enteriőr is nagyon barátságos, kellemes, vendégmarasztaló. Már csak a Szép kártyás fizetési lehetőség hiányzik, de ez már igazán apróság. Mindenképpen ajánlott hely! ”</div>
+					<div class="author">Szántó Julianna - Facebook</div>
+				</div>
+			</div>
+			<div class="testimonial-block">
+				<div class="inner-box">
+					<div class="text">“Sajnos nincs 6 csillag A kiszolgálás nagyon kedves és gyors, az adagok bőségesek, az árak barátságosak, a választék szintén bőséges. Csak ajánlani tudom mindenkinek. ”</div>
+					<div class="author">Zsófia Rajki - Facebook</div>
+				</div>
+			</div>
+			<div class="testimonial-block">
+				<div class="inner-box">
+					<div class="text">“Authentic Vietnamese food in Budapest!!! I have been tried Vietnamese food in several European cities but this restaurant is definitely at different level. Great decor brings the feel of Old Hanoi. Foods are authentic that makes me feel like mom's food. Must come restaurant for Vietnamese food in Budapest!!!”</div>
+					<div class="author">Le My Lan - Facebook</div>
+				</div>
+			</div>
         </div>
     </div>
 </section>

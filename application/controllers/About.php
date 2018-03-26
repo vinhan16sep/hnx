@@ -19,4 +19,11 @@ class About extends Public_Controller {
     	$this->data['abouts'] = $about;
         $this->render('about_view');
     }
+
+    public function about_2(){
+        $this->data['current_link'] = 'about';
+        $about = $this->about_model->get_latest_article($this->data['lang']);
+        $this->data['abouts'] = $about;
+        $this->render('about_2_view');
+    }
 }
