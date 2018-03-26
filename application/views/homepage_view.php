@@ -11,7 +11,7 @@
 <section class="title-section">
     <div class="auto-container">
         <div class="sec-title centered">
-            <h2><?php echo $this->lang->line('unique_story') ?> <br /><?php echo $this->lang->line('since') ?> 2016</h2> </div>
+            <h2><?php echo $this->lang->line('unique_story') ?> <br /><!--<?php echo $this->lang->line('since') ?> 2016--></h2> </div>
         <div class="content">
             <div class="text">
                 <?php echo $this->lang->line('intro') ?>
