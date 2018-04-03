@@ -215,7 +215,7 @@ class Menu_model extends CI_Model{
         return $result = $this->db->get()->result_array();
     }
 
-    public function get_latest_article($lang, $status = null, $category = null, $store = 1){
+    public function get_latest_article($lang, $status = null, $category = null, $store = 1, $limit = null){
         $this->db->select('menu.*, menu.id as menu_id, menu_lang.*, category_lang.name as cate_name');
         $this->db->from('menu');
         $this->db->join('menu_lang', 'menu_lang.menu_id = menu.id');
@@ -229,11 +229,16 @@ class Menu_model extends CI_Model{
         if($category != null){
             $this->db->where('menu.category_id', $category);
         }
+
         $this->db->where('menu.is_deleted', 0);
         $this->db->group_start();
         $this->db->where('menu.store', $store);
         $this->db->or_where('menu.store', 3);
         $this->db->group_end();
+        if($limit != null){
+            $this->db->order_by("menu.id", "RANDOM");
+            $this->db->limit($limit, 0);
+        }
         $this->db->order_by("menu.id", "desc");
 
         return $result = $this->db->get()->result_array();

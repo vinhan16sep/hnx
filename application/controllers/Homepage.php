@@ -15,6 +15,7 @@ class Homepage extends Public_Controller {
     }
 
     public function index(){
+        $this->output->enable_profiler(TRUE);
         $this->load->model('menu_model');
         $menu_last = $this->menu_model->get_row_latest_article($this->data['lang'], 1);
         $menu_last['image'] = json_decode($menu_last['image'])[0];
@@ -25,13 +26,13 @@ class Homepage extends Public_Controller {
             $menu_image_icon[$key]['image'] = json_decode($value['image'])[0];
         }
 
-        $main_menu = $this->menu_model->get_latest_article($this->data['lang'], null, 9, 0);
+        $main_menu = $this->menu_model->get_latest_article($this->data['lang'], null, null, 1, 9);
         
         $this->data['menu_last'] = $menu_last;
         $this->data['menu_image_icon'] = $menu_image_icon;
         $this->data['main_menu'] = $main_menu;
 
-        // print_r($menu_image_icon);die;
+        // print_r($main_menu);die;
         $this->data['current_link'] = 'homepage';
         $this->render('homepage_view');
     }
