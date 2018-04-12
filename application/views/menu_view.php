@@ -6,7 +6,7 @@
     }
 </style>
 
-<section class="page-title" style="background-image:url(<?php echo site_url('assets/public/img/background/menu.jpg')?>);">
+<section class="page-title" style="background-image:url(<?php echo site_url('assets/public/img/background/store_1/menu.jpg')?>);">
     <div class="auto-container">
         <div class="title"><?php echo $this->lang->line('discover_our') ?></div>
         <h2><?php echo $this->lang->line('menu') ?></h2> </div>

@@ -15,7 +15,7 @@ class Homepage extends Public_Controller {
     }
 
     public function index(){
-        $this->output->enable_profiler(TRUE);
+        //$this->output->enable_profiler(TRUE);
         $this->load->model('menu_model');
         $menu_last = $this->menu_model->get_row_latest_article($this->data['lang'], 1);
         $menu_last['image'] = json_decode($menu_last['image'])[0];

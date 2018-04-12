@@ -12,7 +12,7 @@
 	}
 </style>
 
-<section class="page-title" style="background-image:url(<?php echo site_url('assets/public/img/background/about.jpg')?>);">
+<section class="page-title" style="background-image:url(<?php echo site_url('assets/public/img/background/store_1/about.jpg')?>);">
     <div class="auto-container">
         <div class="title"><?php echo $this->lang->line('welcome') ?></div>
         <h2><?php echo $this->lang->line('story') ?></h2>
@@ -34,10 +34,10 @@
             <div class="image-column col-md-6 col-sm-12 col-xs-12">
                 <div class="row clearfix">
                     <div class="column col-md-6 col-sm-6 col-xs-6">
-                        <div class="image"> <img src="<?php echo site_url('assets/public/img/resource/table-1.jpg')?>" alt="" /> </div>
+                        <div class="image"> <img src="<?php echo site_url('assets/public/img/background/store_1/about_preview_1.jpg')?>" alt="" /> </div>
                     </div>
                     <div class="column col-md-6 col-sm-6 col-xs-6">
-                        <div class="image"> <img src="<?php echo site_url('assets/public/img/resource/table-2.jpg')?>" alt="" /> </div>
+                        <div class="image"> <img src="<?php echo site_url('assets/public/img/background/store_1/about_preview_2.jpg')?>" alt="" /> </div>
                     </div>
                 </div>
             </div>
@@ -59,9 +59,9 @@
 <section class="carousel-section">
     <div class="auto-container">
         <div class="single-item-carousel owl-theme owl-carousel">
-            <div class="slide"> <img src="<?php echo site_url('assets/public/img/resource/slide-2.jpg')?>" alt="" /> </div>
-            <div class="slide"> <img src="<?php echo site_url('assets/public/img/resource/slide-2.jpg')?>" alt="" /> </div>
-            <div class="slide"> <img src="<?php echo site_url('assets/public/img/resource/slide-2.jpg')?>" alt="" /> </div>
+            <div class="slide"> <img src="<?php echo site_url('assets/public/img/background/store_1/about_slide_1.jpg')?>" alt="" /> </div>
+            <div class="slide"> <img src="<?php echo site_url('assets/public/img/background/store_1/about_slide_2.jpg')?>" alt="" /> </div>
+            <div class="slide"> <img src="<?php echo site_url('assets/public/img/background/store_1/about_slide_3.jpg')?>" alt="" /> </div>
         </div>
     </div>
     <br>
@@ -89,7 +89,7 @@
     </div>
 </section>
 -->
-<section class="place-section" style="background-image:url('<?php echo site_url('assets/public/img/background/7.jpg')?>');">
+<section class="place-section" style="background-image:url('<?php echo site_url('assets/public/img/background/store_1/about_break.jpg')?>');">
     <div class="auto-container">
         <div class="row clearfix">
             <div class="column col-md-6 col-sm-12 col-xs-12"></div>
